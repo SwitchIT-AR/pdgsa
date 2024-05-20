@@ -1,0 +1,71 @@
+.headerArea {
+    /* Add any additional styling here if needed */
+}
+
+.headerTop {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.welcomeText p {
+    margin: 0;
+    color: #333;
+}
+
+.headerCta ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.headerCta ul li {
+    display: inline-block;
+    margin-left: 35px;
+    color: #333;
+}
+
+.headerCta ul li i {
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+
+.menuArea {
+    background-color: #3c3935;
+    padding: 10px 0;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.main-menu .nav-link {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.main-menu .nav-link:hover {
+    color: #d29751;
+}
+
+.topBtn {
+    background-color: #d29751;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.topBtn:hover {
+    background-color: #b58344;
+}
+
+.responsive {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #fff;
+}
