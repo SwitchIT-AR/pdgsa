@@ -26,8 +26,8 @@ const Counter: React.FC<CounterProps> = ({ data }) => {
             <div className="container">
                 <div className="row">
                     {counterData.map((item, index) => (
-                        <div key={index} className="col-lg-3 col-sm-6">
-                            <div className="single-counter text-center mb-30 wow fadeInUp animated"
+                        <div key={index} className="col-lg-3 col-sm-6 text-center">
+                            <div className="single-counter mb-30 wow fadeInUp animated"
                                  data-animation="fadeInDown animated" data-delay=".2s">
 
                                     <FontAwesomeIcon icon={item.icon} />
