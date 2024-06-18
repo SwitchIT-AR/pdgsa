@@ -59,11 +59,6 @@ const App: React.FC = () => {
             <Slider data={data} />
 s           <About data={data} />
             <Counter data={data}/>
-            <Apartments data={data} />
-            <Neighborhoods data={data} />
-            <Testimonials data={data} />
-            <Blog data={data} />
-            <Brand data={data} />
 
 
         </div>

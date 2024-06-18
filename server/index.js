@@ -4,18 +4,18 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 
 const app = express();
-const port = 5000;
+const port = 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 const sheets = google.sheets('v4');
 const auth = new google.auth.GoogleAuth({
-    keyFile: './affable-ruler-423614-q0-450352bd6195.json', // Update the path here
+    keyFile: './pdgsa-webs-clientes-c4185f428021.json', // Update the path here
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
-const spreadsheetId = '1TQPrsXsge0Ah8N8o2JFwBGsYTsBOhaJPgroD85hiTs0';
+const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
 
 app.post('/submit', async (req, res) => {
     const { name, mail, body } = req.body;
@@ -74,7 +74,7 @@ app.get('/landing', async (req, res) => {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: 'landing!A1:Z1000', // Adjust the range as needed
+            range: 'landing!A1:B60', // Adjust the range as needed
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);

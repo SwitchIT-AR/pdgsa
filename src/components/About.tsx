@@ -5,6 +5,10 @@ interface AboutProps {
         aboutTitle: string;
         aboutSubtitle: string;
         aboutDescription: string;
+        aboutDescription2: string;
+        aboutButton: string;
+        aboutButtonLink: string;
+        aboutImage: string;
     };
 }
 
@@ -15,9 +19,9 @@ const About: React.FC<AboutProps> = ({ data }) => {
                 <div className="row align-items-center">
                     <div className="col-lg-6">
                         <div className="s-about-img p-relative">
-                            <img src="img/about_img02.png" alt="img" />
+                            <img src={data.aboutImage} alt="img" />
                             <div className="about-text second-about">
-                                <span>35 years of <br /> experience</span>
+                                <span>{data.aboutDescription2}</span>
                             </div>
                         </div>
                     </div>
@@ -29,7 +33,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                                 <p><span>{data.aboutSubtitle}</span></p>
                             </div>
                             <p>{data.aboutDescription}</p>
-                            <a href="#" className="btn">Get Started</a>
+                            <a href={data.aboutButtonLink} className="btn">{data.aboutButton}</a>
                         </div>
                     </div>
                 </div>
