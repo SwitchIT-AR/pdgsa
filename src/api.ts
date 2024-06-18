@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const fetchData = async () => {
     try {
-        const response = await axios.get('http://localhost:8088/JDF');
+        const response = await axios.get('https://pdgsa.switchit.com.ar/JDF');
         return response.data;
     } catch (error) {
         console.error('Error fetching data from server:', error);
