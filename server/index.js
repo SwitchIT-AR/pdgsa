@@ -69,12 +69,13 @@ const transformData = (data) => {
     return transformedData;
 };
 
-app.get('/JDF', async (req, res) => {
+app.get('/:sheetName', async (req, res) => {
+    const { sheetName } = req.params;
     try {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: 'JDF!A1:B320', // Adjust the range as needed
+            range: `${sheetName}!A1:B320`, // Use the sheetName from the route parameter
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);
