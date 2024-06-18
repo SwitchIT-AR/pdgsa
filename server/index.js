@@ -69,12 +69,12 @@ const transformData = (data) => {
 
 
 
-app.get('/landing', async (req, res) => {
+app.get('/JDF', async (req, res) => {
     try {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: 'landing!A1:B60', // Adjust the range as needed
+            range: 'JDF!A1:B60', // Adjust the range as needed
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);
