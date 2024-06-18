@@ -59,7 +59,7 @@ const App: React.FC = () => {
             <Slider data={data} />
 s           <About data={data} />
             <Counter data={data}/>
-
+            <Apartments data={data} />
 
         </div>
     );

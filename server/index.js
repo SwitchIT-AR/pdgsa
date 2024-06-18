@@ -74,7 +74,7 @@ app.get('/JDF', async (req, res) => {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: 'JDF!A1:B60', // Adjust the range as needed
+            range: 'JDF!A1:B320', // Adjust the range as needed
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);

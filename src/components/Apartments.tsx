@@ -9,6 +9,7 @@ interface ApartmentsProps {
 
 const Apartments: React.FC<ApartmentsProps> = ({ data }) => {
     const apartments = data.apartments.split('|');
+    console.log(apartments)
 
     return (
         <div className="apartments container my-5">
