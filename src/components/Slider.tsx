@@ -6,15 +6,20 @@ interface SliderProps {
         sliderText1: string;
         sliderSubText1: string;
         sliderButton1: string;
+        heroCar1:string;
+        heroCar2:string;
+        heroCar3:string;
     };
+    driveUrl:string;
 }
 
-const Slider: React.FC<SliderProps> = ({ data }) => {
+
+const Slider: React.FC<SliderProps> = ({ data, driveUrl }) => {
     return (
         <section id="home" className="slider-area fix p-relative">
             <Carousel fade>
                 <Carousel.Item>
-                    <div className="single-slider slider-bg d-flex align-items-center" style={{ backgroundImage: 'url(img/slider/slider_img01.jpg)' }}>
+                    <div className="single-slider slider-bg d-flex align-items-center" style={{ backgroundImage: `url(${driveUrl}${data.heroCar1})` }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">
@@ -55,7 +60,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className="single-slider slider-bg d-flex align-items-center" style={{ backgroundImage: 'url(img/slider/slider_img02.jpg)' }}>
+                    <div className="single-slider slider-bg d-flex align-items-center" style={{ backgroundImage: `url(${driveUrl}${data.heroCar2})` }}>
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-8">

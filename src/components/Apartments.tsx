@@ -14,7 +14,7 @@ interface ApCardProps {
 
 const ApartmentCard = (props: ApCardProps) => {
   const { img, index } = props;
-  console.log('imagen apartment', img);
+ // console.log('imagen apartment', img);
 
   const formatedIndex = (index + 1).toString().padStart(2, '0');
 
@@ -83,7 +83,7 @@ const Apartments: React.FC<ApartmentsProps> = ({ data }) => {
         </div>
         <div className='row services-active'>
           {apartments.map((apartment, index) => (
-            <ApartmentCard img={apartment} index={index} />
+            <ApartmentCard img={apartment} index={index} key={index} />
           ))}
         </div>
       </div>

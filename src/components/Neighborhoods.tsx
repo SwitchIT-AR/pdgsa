@@ -19,7 +19,7 @@ interface NeigCardProps {
 const NeighborCard = (props: NeigCardProps) => {
   const { img, index, title, description } = props;
 
-  console.log('img', img, 'title', title);
+ // console.log('img', img, 'title', title);
   return (
     <div
       className={`col-lg-4 col-md-6`}

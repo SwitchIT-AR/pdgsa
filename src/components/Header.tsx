@@ -6,10 +6,12 @@ interface HeaderProps {
         headerPhone: string;
         headerEmail: string;
         headerHours: string;
+        logoId:string;
     };
+    driveUrl: string; // New prop for the logo URL
 }
 
-const Header: React.FC<HeaderProps> = ({ data }) => {
+const Header: React.FC<HeaderProps> = ({ data, driveUrl }) => {
     return (
         <header className="header-area">
             <div className="header-top second-header d-none d-md-block">
@@ -47,7 +49,8 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                         <div className="row align-items-center">
                             <div className="col-xl-2 col-lg-2">
                                 <div className="logo">
-                                    <a href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                                    <a href="index.html"><img width={200} src={driveUrl+data.logoId} alt="logo"/></a>
+
                                 </div>
                             </div>
                             <div className="col-xl-10 col-lg-9">
