@@ -56,7 +56,7 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
 //             <ChooseArea data={data} />
     //          <Services data={data} />
     //         <ContactForm data={data} />
-    //       <Footer data={data} />
+
     return (
         <div>
             <Header data={data} driveUrl={driveUrl} />
@@ -70,7 +70,7 @@ s           <About data={data}  driveUrl={driveUrl}  />
             <SpecsSection data={data}  driveUrl={driveUrl} />
             <BrandSection data={data}  driveUrl={driveUrl} />
             <Counter data={data}  driveUrl={driveUrl} />
-
+            <Footer data={data} driveUrl={driveUrl} />
         </div>
     );
 };
