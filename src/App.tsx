@@ -13,6 +13,7 @@ import Slider from './components/Slider';
 import ChooseArea from './components/ChooseArea';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
+import YouTubeEmbed from "./components/Youtube.tsx";
 
 interface Data {
     [key: string]: string | string[];
@@ -57,7 +58,8 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
         <div>
             <Header data={data}  driveUrl={driveUrl}/>
             <Slider data={data} driveUrl={driveUrl}/>
-s           <About data={data} driveUrl={driveUrl}/>
+            <YouTubeEmbed data={data}></YouTubeEmbed>
+           <About data={data} driveUrl={driveUrl}/>
             <Counter data={data} driveUrl={driveUrl}/>
             <Apartments data={data}  driveUrl={driveUrl}/>
 
