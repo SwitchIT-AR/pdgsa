@@ -21,6 +21,7 @@ import HouseModelSection from './components/HouseModelSection.tsx';
 import InteriorSection from './components/InteriorSection.tsx';
 
 import SocialMedia from "./components/SocialMedia.tsx";
+import BrochureSection from './components/BrochureSection.tsx';
 interface Data {
     [key: string]: string | string[];
 }
@@ -75,6 +76,7 @@ s           <About data={data}  driveUrl={driveUrl}  />
             <HouseModelSection data={data}  driveUrl={driveUrl} />
             <Counter data={data}  driveUrl={driveUrl} />
             <InteriorSection data={data}  driveUrl={driveUrl} />
+            <BrochureSection data={data}  driveUrl={driveUrl} />
             <SocialMedia data={data} driveUrl={driveUrl}></SocialMedia>
             <Footer data={data} driveUrl={driveUrl} />
         </div>
