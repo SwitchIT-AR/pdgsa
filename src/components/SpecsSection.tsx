@@ -16,21 +16,22 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
         className='s-single-services wow fadeInUp  animated'
         data-animation='fadeInDown animated'
         data-delay='.2s'
+        style={{ height: '200px'}}
       >
-        <div style={{}} className='services-ico2'>
+        <div style={{ marginBottom: '15px', marginLeft: '15px' }}>
           <FontAwesomeIcon
             style={{
               backgroundColor: `${props.color}`,
               borderRadius: '50%',
               padding: '15px',
               color: 'white',
-              fontSize: '50px',
+              fontSize: '30px',
             }}
             icon={props.icon}
           />
         </div>
         <div className='second-services-content2'>
-          <h5>{props.title}</h5>
+          <h5 style={{ fontSize: '14px' }}>{props.title}</h5>
         </div>
       </div>
     </div>
@@ -64,15 +65,6 @@ const SpecsSection = (props: SpecsSectionProps) => {
                 ))
               }
               </div>
-            <div>
-              <FontAwesomeIcon icon='fa-solid fa-arrow-up-from-ground-water' />
-              <FontAwesomeIcon icon='fa-solid fa-network-wired' />
-              <FontAwesomeIcon icon='fa-solid fa-solar-panel' />
-              <FontAwesomeIcon icon='fa-solid fa-tent' />
-              <FontAwesomeIcon icon='fa-solid fa-children' />
-              <FontAwesomeIcon icon='fa-solid fa-hand-holding-droplet' />
-              <FontAwesomeIcon icon='fa-solid fa-paw' />
-            </div>
           </div>
         </div>
       </div>
