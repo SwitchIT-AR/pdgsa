@@ -1,24 +1,9 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface SliderProps {
-    data: {
-        sliderText1: string;
-        sliderSubText1: string;
-        sliderSubText2: string;
-        sliderSubText3: string;
-        sliderSubText4: string;
-        sliderSubText5: string;
-        sliderPrice: string;
-        sliderButton1: string;
-        sliderImage1: string;
-        sliderImage2: string;
-        sliderImage3: string;
-    };
-    driveUrl: string;
-}
 
-const Slider: React.FC<SliderProps> = ({ data, driveUrl }) => {
+const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const renderCarouselItem = (image: string) => (
         <Carousel.Item>
             <div className="single-slider slider-bg d-flex align-items-center" style={{ backgroundImage: `url(${driveUrl}${image})` }}>

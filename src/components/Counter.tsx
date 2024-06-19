@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import {CommonProps} from "../types/globalTypes.ts";
 
 interface CounterData {
     icon: IconProp;
@@ -8,11 +9,8 @@ interface CounterData {
     label: string;
 }
 
-interface CounterProps {
-    data: any;
-}
 
-const Counter: React.FC<CounterProps> = ({ data }) => {
+const Counter: React.FC<CommonProps> = ({ data }) => {
     const counterData: CounterData[] = [
         { icon: ['fas', 'pencil-ruler'], count: parseInt(data.counterCount1, 10), label: data.counterLabel1 },
         { icon: ['fas', 'bath'], count: parseInt(data.counterCount2, 10), label: data.counterLabel2 },

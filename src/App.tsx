@@ -1,33 +1,33 @@
+// App.tsx
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import About from './components/About';
-import Counter from "./components/Counter.tsx";
+import Counter from './components/Counter';
 import BrandSection from './components/BrandSection';
 import Neighborhoods from './components/Neighborhoods';
 import Footer from './components/Footer';
 import Slider from './components/Slider';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
-import MapSection from './components/MapSection.tsx';
-import MasterPlanSection from './components/MasterPlanSection.tsx';
-import SpecsSection from './components/SpecsSection.tsx';
-import YouTubeEmbed from "./components/Youtube.tsx";
-import HouseModelSection from './components/HouseModelSection.tsx';
-import InteriorSection from './components/InteriorSection.tsx';
-import SocialMedia from "./components/SocialMedia.tsx";
-import BrochureSection from './components/BrochureSection.tsx';
-interface Data {
-    [key: string]: string | string[];
-}
+import MapSection from './components/MapSection';
+import MasterPlanSection from './components/MasterPlanSection';
+import SpecsSection from './components/SpecsSection';
+import Youtube from "./components/Youtube.tsx";
+import HouseModelSection from './components/HouseModelSection';
+import InteriorSection from './components/InteriorSection';
+import SocialMedia from './components/SocialMedia';
+import BrochureSection from './components/BrochureSection';
+import { Data } from './types/globalTypes';
+
+const driveUrl = "https://lh3.googleusercontent.com/d/";
 
 const App: React.FC = () => {
     const [data, setData] = useState<Data | null>(null);
     const [loading, setLoading] = useState(true);
-const driveUrl = "https://lh3.googleusercontent.com/d/"
+
     const fetchDataAsync = async () => {
         try {
             const result = await fetchData();
-
             if (result && typeof result === 'object') {
                 setData(result);
             } else {
@@ -51,28 +51,24 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
     if (!data) {
         return <div>Error loading data</div>;
     }
-//             <ChooseArea data={data} />
-    //          <Services data={data} />
-
 
     return (
         <div>
             <Header data={data} driveUrl={driveUrl} />
-            <Slider data={data} driveUrl={driveUrl}  />
-            <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
-            <About data={data}  driveUrl={driveUrl}  />
-            {/* <Apartments data={data}  driveUrl={driveUrl} /> */}
-            <MapSection data={data} driveUrl={driveUrl}  />
-            <Neighborhoods data={data}  driveUrl={driveUrl} />
-            <MasterPlanSection data={data}  driveUrl={driveUrl} />
-            <SpecsSection data={data}  driveUrl={driveUrl} />
-            <BrandSection data={data}  driveUrl={driveUrl} />
-            <HouseModelSection data={data}  driveUrl={driveUrl} />
-            <Counter data={data}  driveUrl={driveUrl} />
-            <InteriorSection data={data}  driveUrl={driveUrl} />
-            <BrochureSection data={data}  driveUrl={driveUrl} />
-            <ContactForm data={data} driveUrl={driveUrl}/>
-            <SocialMedia data={data} driveUrl={driveUrl}></SocialMedia>
+            <Slider data={data} driveUrl={driveUrl} />
+            <Youtube data={data} driveUrl={driveUrl} />
+            <About data={data} driveUrl={driveUrl} />
+            <MapSection data={data} driveUrl={driveUrl} />
+            <Neighborhoods data={data}  />
+            <MasterPlanSection data={data} driveUrl={driveUrl} />
+            <SpecsSection data={data}  />
+            <BrandSection data={data} driveUrl={driveUrl} />
+            <HouseModelSection data={data} driveUrl={driveUrl} />
+            <Counter data={data} driveUrl={driveUrl} />
+            <InteriorSection data={data} driveUrl={driveUrl} />
+            <BrochureSection data={data} driveUrl={driveUrl} />
+            <ContactForm data={data} driveUrl={driveUrl} />
+            <SocialMedia data={data} driveUrl={driveUrl} />
             <Footer data={data} driveUrl={driveUrl} />
         </div>
     );

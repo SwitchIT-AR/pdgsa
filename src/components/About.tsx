@@ -1,20 +1,8 @@
 import React from 'react';
+import { CommonProps } from '../types/globalTypes';
 
-interface AboutProps {
-    data: {
-        aboutTitle: string;
-        aboutSubtitle: string;
-        aboutDescription: string;
-        aboutDescription2: string;
-        aboutButton: string;
-        aboutButtonLink: string;
-        aboutImage: string;
-        aboutText: string;
-    };
-    driveUrl: string;
-}
 
-const About: React.FC<AboutProps> = ({ data, driveUrl }) => {
+const About: React.FC<CommonProps> = ({ data, driveUrl }) => {
     return (
         <section id="about" className="about-area about-p pt-120 pb-120 p-relative">
             <div className="container">

@@ -1,18 +1,9 @@
 import React from 'react';
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface FooterProps {
-    data: {
-        footerText: string;
-        footerLinks: string;
-        footerItems: string;
-        logoWhite: string;
-        gmapsLink: string;
-        footerRights: string;
-    };
-    driveUrl: string;
-}
 
-const Footer: React.FC<FooterProps> = ({data, driveUrl}) => {
+
+const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const footerLinks = data.footerLinks.split(',');
     const footerItems = data.footerItems.split(',');
 

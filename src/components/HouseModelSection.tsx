@@ -1,21 +1,9 @@
 import style from './General.module.css';
+import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface HouseModelSectionProps {
-  data: {
-    modelHomeTitle: string;
-    modelHomeSubtitle: string;
-    modelHomeImage1: string;
-    modelHomeImage2: string;
-    mainColor: string;
-  };
-  driveUrl: string;
-}
 
-const HouseModelSection: React.FC<HouseModelSectionProps> = ({
-  data,
-  driveUrl,
-}) => {
-  console.log(`${driveUrl}${data.modelHomeImage1}`);
+const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section id='services' className='services-area pt-113 pb-150'>
       <div className='container'>

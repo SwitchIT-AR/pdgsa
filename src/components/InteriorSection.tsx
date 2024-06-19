@@ -1,20 +1,8 @@
 import style from './General.module.css';
+import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface InteriorSectionProps {
-  data: {
-    interiorsTitle: string;
-    interiorCard1: string;
-    interiorCard1Image: string;
-    InteriorCard2: string;
-    interiorCard2Image: string;
-    interiorCard3: string;
-    interiorCard3Image: string;
-    interiorCard4: string;
-    interiorCard4Image: string;
-    mainColor: string;
-  },
-  driveUrl: string;
-}
+
 
 const InteriorCard = (props: { title: string; image: string }) => {
 
@@ -32,7 +20,7 @@ const InteriorCard = (props: { title: string; image: string }) => {
   )
 };
 
-const InteriorSection: React.FC<InteriorSectionProps> = ({ data, driveUrl }) => {
+const InteriorSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section id='services' className='services-area mt-30'>
       <div className='container'>

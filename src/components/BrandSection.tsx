@@ -1,20 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface BrandSectionProps {
-  data: {
-    brandTitle: string;
-    brandPhone : string;
-    botonbrandtitle: string;
-    brandHeroImage: string;
-    mainColor: string;
-  };
-  driveUrl: string;
 
-}
-
-const BrandSection: React.FC<BrandSectionProps> = ({ data, driveUrl }) => {
-
-console.log(data.brandPhone )
+const BrandSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section style={{ marginBottom: '40px', backgroundImage: `url(${driveUrl}${data.brandHeroImage})`, width: '100%', height: '100%', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(0,0,0,0.5)',zIndex: '2'}} className="cta-area cta-bg pt-120 pb-120">
         <div className="container">

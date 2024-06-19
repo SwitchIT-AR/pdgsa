@@ -1,21 +1,8 @@
 import React from 'react';
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface HeaderProps {
-    data: {
-        headerWelcomeText: string;
-        headerPhone: string;
-        headerEmail: string;
-        headerHours: string;
-        logo: string;
-        navbarItems: string;
-        navbarLinks: string;
-        headerBackground: string;
-    };
-    driveUrl: string;
-}
 
-const Header: React.FC<HeaderProps> = ({ data, driveUrl }) => {
-    // Split the strings into arrays
+const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const itemsArray = data.navbarItems ? data.navbarItems.split(", ") : [];
     const linksArray = data.navbarLinks ? data.navbarLinks.split(", ") : [];
 
