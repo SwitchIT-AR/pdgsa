@@ -57,9 +57,9 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
         <div>
             <Header data={data}  driveUrl={driveUrl}/>
             <Slider data={data} driveUrl={driveUrl}/>
-s           <About data={data} />
-            <Counter data={data}/>
-            <Apartments data={data} />
+s           <About data={data} driveUrl={driveUrl}/>
+            <Counter data={data} driveUrl={driveUrl}/>
+            <Apartments data={data}  driveUrl={driveUrl}/>
 
         </div>
     );
