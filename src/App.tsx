@@ -16,6 +16,7 @@ import HouseModelSection from './components/HouseModelSection.tsx';
 import InteriorSection from './components/InteriorSection.tsx';
 import SocialMedia from "./components/SocialMedia.tsx";
 import BrochureSection from './components/BrochureSection.tsx';
+import WhatsappButton from './components/WhatsappButton.tsx';
 interface Data {
     [key: string]: string | string[];
 }
@@ -56,12 +57,12 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
 
 
     return (
-        <div>
+        <div style={{ position: 'relative'}}>
+            <WhatsappButton />
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl}  />
             <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
             <About data={data}  driveUrl={driveUrl}  />
-            {/* <Apartments data={data}  driveUrl={driveUrl} /> */}
             <MapSection data={data} driveUrl={driveUrl}  />
             <Neighborhoods data={data}  driveUrl={driveUrl} />
             <MasterPlanSection data={data}  driveUrl={driveUrl} />
@@ -72,7 +73,7 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
             <InteriorSection data={data}  driveUrl={driveUrl} />
             <BrochureSection data={data}  driveUrl={driveUrl} />
             <ContactForm data={data} driveUrl={driveUrl}/>
-            <SocialMedia data={data} driveUrl={driveUrl}></SocialMedia>
+            <SocialMedia data={data} driveUrl={driveUrl} />
             <Footer data={data} driveUrl={driveUrl} />
         </div>
     );
