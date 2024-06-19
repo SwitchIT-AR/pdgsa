@@ -1,13 +1,8 @@
 import React from 'react';
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface SocialMediaProps {
-    data: {
-        socialMediaIcons: string;
-        socialMediaLinks: string;
-    };
-}
 
-const SocialMedia: React.FC<SocialMediaProps> = ({ data }) => {
+const SocialMedia: React.FC<CommonProps> = ({ data }) => {
     const iconsArray = data.socialMediaIcons.split('|');
     const linksArray = data.socialMediaLinks.split('|');
 

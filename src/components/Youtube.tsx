@@ -1,12 +1,7 @@
 import React from 'react';
+import { CommonProps } from '../types/globalTypes';
 
-interface YouTubeProps {
-    data: {
-        video: string;
-    };
-}
-
-const YouTubeEmbed: React.FC<YouTubeProps> = ({ data }) => {
+const YouTube: React.FC<CommonProps> = ({ data }) => {
     return (
         <div style={{
             display: 'flex',
@@ -45,4 +40,4 @@ const YouTubeEmbed: React.FC<YouTubeProps> = ({ data }) => {
     );
 };
 
-export default YouTubeEmbed;
+export default YouTube;

@@ -1,18 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface ContactFormProps {
-    data: {
-        contactTitle: string;
-        contactSubtitle: string;
-        contactAddress: string;
-        contactTime: string;
-        contactMail:string;
-        contactTerms:string;
-    };
-}
 
-const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
+const ContactForm: React.FC<CommonProps> = ({ data }) => {
     const [name, setName] = useState('');
     const [mail, setEmail] = useState('');
     const [phone, setPhone] = useState('');

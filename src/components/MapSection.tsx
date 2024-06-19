@@ -1,16 +1,8 @@
 import style from './General.module.css';
 import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface MapSectionProps {
-  data: {
-    mapTitle: string;
-    mapImage: string;
-    mainColor: string;
-  };
-  driveUrl: string;
-}
-
-const MapSection: React.FC<MapSectionProps> = ({ data, driveUrl }) => {
+const MapSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
 
   <section id='services' className='services-area'>

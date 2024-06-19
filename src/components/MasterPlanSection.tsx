@@ -1,15 +1,8 @@
 import style from './General.module.css';
 import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-interface MasterplanProps {
-  data: {
-    masterplanTitle: string;
-    masterplanImage: string;
-    mainColor: string;
-  };
-}
-
-const MasterPlanSection: React.FC<MasterplanProps> = ({ data, driveUrl }) => {
+const MasterPlanSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
 
   <section id='services' className='services-area'>

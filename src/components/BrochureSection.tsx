@@ -1,17 +1,9 @@
-interface BrochureSectionProps {
-  data: {
-    brochureTitle: string;
-    brochureImage: string;
-    brochurePdf: string;
-    mainColor: string;
-  };
-  driveUrl: string;
-}
+import React from "react";
+import {CommonProps} from "../types/globalTypes.ts";
 
-const BrochureSection: React.FC<BrochureSectionProps> = ({
-  data,
-  driveUrl,
-}) => {
+
+
+const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section id='about' className='about-area about-p pt-120 pb-120 p-relative'>
       <div className='container'>
