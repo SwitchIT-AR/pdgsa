@@ -2,12 +2,14 @@ import express from 'express';
 import { google } from 'googleapis';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import morgan from 'morgan';
 
 const app = express();
-const port = 8080;
+const port = 8088;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(morgan('dev')); // Add morgan middleware for logging
 
 const sheets = google.sheets('v4');
 const auth = new google.auth.GoogleAuth({
@@ -67,14 +69,13 @@ const transformData = (data) => {
     return transformedData;
 };
 
-
-
-app.get('/JDF', async (req, res) => {
+app.get('/:sheetName', async (req, res) => {
+    const { sheetName } = req.params;
     try {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: 'JDF!A1:B320', // Adjust the range as needed
+            range: `${sheetName}!A1:B320`, // Use the sheetName from the route parameter
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);
@@ -85,7 +86,6 @@ app.get('/JDF', async (req, res) => {
         res.status(500).send('Error reading from Google Sheets.');
     }
 });
-
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
