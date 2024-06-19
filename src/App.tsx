@@ -21,7 +21,7 @@ interface Data {
 const App: React.FC = () => {
     const [data, setData] = useState<Data | null>(null);
     const [loading, setLoading] = useState(true);
-
+const driveUrl = "https://lh3.googleusercontent.com/d/"
     const fetchDataAsync = async () => {
         try {
             const result = await fetchData();
@@ -55,8 +55,8 @@ const App: React.FC = () => {
     //       <Footer data={data} />
     return (
         <div>
-            <Header data={data} />
-            <Slider data={data} />
+            <Header data={data}  driveUrl={driveUrl}/>
+            <Slider data={data} driveUrl={driveUrl}/>
 s           <About data={data} />
             <Counter data={data}/>
             <Apartments data={data} />
