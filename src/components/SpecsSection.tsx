@@ -43,8 +43,6 @@ const SpecsSection = (props: SpecsSectionProps) => {
   const specsList = data.specsData.split(', ');
   const formatedList = specsList.map((data) => data.split(' - '));
   const color = data.mainColor;
-
-  console.log(formatedList);
   return (
     <section id='services' className='services-area'>
       <div className='container'>

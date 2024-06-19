@@ -3,7 +3,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Counter from "./components/Counter.tsx";
 import Services from './components/Services';
-import Brand from './components/Brand';
+import BrandSection from './components/BrandSection';
 import Apartments from './components/Apartments';
 import Neighborhoods from './components/Neighborhoods';
 import Testimonials from './components/Testimonials';
@@ -63,12 +63,13 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
             <Slider data={data} driveUrl={driveUrl}  />
             <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
 s           <About data={data}  driveUrl={driveUrl}  />
-            <Counter data={data}  driveUrl={driveUrl} />
-            <Apartments data={data}  driveUrl={driveUrl} />
+            {/* <Apartments data={data}  driveUrl={driveUrl} /> */}
             <MapSection data={data} driveUrl={driveUrl}  />
             <Neighborhoods data={data}  driveUrl={driveUrl} />
             <MasterPlanSection data={data}  driveUrl={driveUrl} />
             <SpecsSection data={data}  driveUrl={driveUrl} />
+            <BrandSection data={data}  driveUrl={driveUrl} />
+            <Counter data={data}  driveUrl={driveUrl} />
 
         </div>
     );
