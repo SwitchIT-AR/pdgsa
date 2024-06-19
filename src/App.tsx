@@ -18,7 +18,6 @@ import MasterPlanSection from './components/MasterPlanSection.tsx';
 import SpecsSection from './components/SpecsSection.tsx';
 import YouTubeEmbed from "./components/Youtube.tsx";
 import HouseModelSection from './components/HouseModelSection.tsx';
-import InteriorSection from './components/InteriorSection.tsx';
 
 import SocialMedia from "./components/SocialMedia.tsx";
 interface Data {
@@ -58,14 +57,14 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
     }
 //             <ChooseArea data={data} />
     //          <Services data={data} />
-    //         <ContactForm data={data} />
+
 
     return (
         <div>
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl}  />
             <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
-s           <About data={data}  driveUrl={driveUrl}  />
+            <About data={data}  driveUrl={driveUrl}  />
             {/* <Apartments data={data}  driveUrl={driveUrl} /> */}
             <MapSection data={data} driveUrl={driveUrl}  />
             <Neighborhoods data={data}  driveUrl={driveUrl} />
@@ -74,7 +73,7 @@ s           <About data={data}  driveUrl={driveUrl}  />
             <BrandSection data={data}  driveUrl={driveUrl} />
             <HouseModelSection data={data}  driveUrl={driveUrl} />
             <Counter data={data}  driveUrl={driveUrl} />
-            <InteriorSection data={data}  driveUrl={driveUrl} />
+            <ContactForm data={data} driveUrl={driveUrl}/>
             <SocialMedia data={data} driveUrl={driveUrl}></SocialMedia>
             <Footer data={data} driveUrl={driveUrl} />
         </div>

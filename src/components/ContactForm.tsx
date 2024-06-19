@@ -3,17 +3,20 @@ import axios from 'axios';
 
 interface ContactFormProps {
     data: {
-        contactFormTitle: string;
-        contactFormDescription: string;
-        contactFormFields: string;
-        contactFormButton: string;
+        contactTitle: string;
+        contactSubtitle: string;
+        contactAddress: string;
+        contactTime: string;
+        contactMail:string;
+        contactTerms:string;
     };
 }
 
 const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
     const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
+    const [mail, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [body, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
 
@@ -23,16 +26,18 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
         setError(false);
 
         try {
-            const response = await axios.post('http://localhost:5000/submit', {
+            const response = await axios.post('https://pdgsa.switchit.com.ar/submit', {
                 name,
-                email,
-                message,
+                mail,
+                phone,
+                body,
             });
 
             if (response.status === 200) {
                 setSubmitted(true);
                 setName('');
                 setEmail('');
+                setPhone('');
                 setMessage('');
             } else {
                 setError(true);
@@ -42,52 +47,101 @@ const ContactForm: React.FC<ContactFormProps> = ({ data }) => {
         }
     };
 
-    const fields = data.contactFormFields.split('|');
 
     return (
-        <div className="contact-form">
-            <h2>{data.contactFormTitle}</h2>
-            <p>{data.contactFormDescription}</p>
-            <form onSubmit={handleSubmit}>
-                {fields.includes('name') && (
-                    <div>
-                        <label htmlFor="name">Name:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            required
-                        />
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-xl-7 col-lg-8">
+                    <div className="section-title text-center mb-80">
+                        <span>Contact</span>
+                        <h2>{data.contactTitle}</h2>
+                        <p>{data.contactSubtitle}</p>
                     </div>
-                )}
-                {fields.includes('email') && (
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-4">
+                    <div className="contact-info">
+                        <div className="single-cta pb-30 mb-30">
+                            <div className="f-cta-icon">
+                                <i className="far fa-map"></i>
+                            </div>
+                            <h5>Ubicacion</h5>
+                            <p>{data.contactAddress}</p>
+                        </div>
+                        <div className="single-cta pb-30 mb-30">
+                            <div className="f-cta-icon">
+                                <i className="far fa-clock"></i>
+                            </div>
+                            <h5>Horario de Atención</h5>
+                            <p>{data.contactTime}</p>
+                        </div>
+                        <div className="single-cta pb-30 mb-30">
+                            <div className="f-cta-icon">
+                                <i className="far fa-envelope-open"></i>
+                            </div>
+                            <h5>Escríbenos</h5>
+                            <p>Siempre estamos disponibles para atender tu consulta: <a href={data.contactMail}>{data.contactMail}</a></p>
+                        </div>
                     </div>
-                )}
-                {fields.includes('message') && (
-                    <div>
-                        <label htmlFor="message">Message:</label>
-                        <textarea
-                            id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
-                            required
-                        />
-                    </div>
-                )}
-                <button type="submit">{data.contactFormButton}</button>
-                {submitted && <p>Thank you for your message!</p>}
-                {error && <p>There was an error submitting your message. Please try again.</p>}
-            </form>
+                </div>
+                <div className="col-lg-8">
+                    <form onSubmit={handleSubmit} className="contact-form">
+                        <div className="row">
+                            <div className="col-lg-12">
+                                <div className="contact-field p-relative c-name mb-40">
+                                    <input
+                                        type="text"
+                                        placeholder="Nombre Completo"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-lg-12">
+                                <div className="contact-field p-relative c-mail mb-40">
+                                    <input
+                                        type="mail"
+                                        placeholder="Correo Electronico"
+                                        value={mail}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-lg-12">
+                                <div className="contact-field p-relative c-mail mb-40">
+                                    <input
+                                        type="phone"
+                                        placeholder="Whatsapp"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="col-lg-12">
+                                <div className="contact-field p-relative c-body mb-45">
+                                    <textarea
+                                        name="body"
+                                        id="body"
+                                        cols={30}
+                                        rows={10}
+                                        placeholder="Dejanos tu consulta"
+                                        value={body}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                    ></textarea>
+                                </div>
+                                <p style={{width:"500px"}}>{data.contactTerms}</p>
+                                <button type="submit" className="btn btn-dark">
+                                    Enviar Mensaje
+                                </button>
+                                {submitted && <p className="text-success mt-3">El mensaje ha sido enviado!</p>}
+                                {error &&
+                                    <p className="text-danger mt-3">Ocurrió un problema al enviar el mensaje, intente de nuevo.</p>}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

@@ -20,7 +20,7 @@ const auth = new google.auth.GoogleAuth({
 const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
 
 app.post('/submit', async (req, res) => {
-    const { name, mail, body } = req.body;
+    const { name, mail, body, phone } = req.body;
     const timestamp = new Date().toLocaleString();
     const project = req.headers.referer || 'unknown';
     try {
@@ -31,7 +31,7 @@ app.post('/submit', async (req, res) => {
             valueInputOption: 'RAW',
             insertDataOption: 'INSERT_ROWS',
             resource: {
-                values: [[name, mail, body, timestamp, project]],
+                values: [[name, mail,phone, body, timestamp, project]],
             },
             auth: client,
         };
