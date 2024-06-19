@@ -13,6 +13,9 @@ import Slider from './components/Slider';
 import ChooseArea from './components/ChooseArea';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
+import MapSection from './components/MapSection.tsx';
+import MasterPlanSection from './components/MasterPlanSection.tsx';
+import SpecsSection from './components/SpecsSection.tsx';
 
 interface Data {
     [key: string]: string | string[];
@@ -60,6 +63,10 @@ const App: React.FC = () => {
 s           <About data={data} />
             <Counter data={data}/>
             <Apartments data={data} />
+            <MapSection data={data} />
+            <Neighborhoods data={data} />
+            <MasterPlanSection data={data} />
+            <SpecsSection data={data} />
 
         </div>
     );

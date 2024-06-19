@@ -7,9 +7,10 @@ interface ApartmentsProps {
   };
 }
 
-const Apartments: React.FC<ApartmentsProps> = ({ data }) => {
-    const apartments = data.apartments.split('|');
-    console.log(apartments)
+interface ApCardProps {
+  img: string;
+  index: number;
+}
 
 const ApartmentCard = (props: ApCardProps) => {
   const { img, index } = props;

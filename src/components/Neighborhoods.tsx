@@ -4,26 +4,23 @@ import style from './General.module.css';
 
 interface NeighborhoodsProps {
   data: {
-    neighborhoodsTitle: string;
-    neighborhoods: string;
+    amenitiesTitle: string;
+    amenitiesData: string;
+    mainColor: string;
   };
 }
 
 interface NeigCardProps {
-  img: string;
   index: number;
   title: string;
   description: string;
 }
 
 const NeighborCard = (props: NeigCardProps) => {
-  const { img, index, title, description } = props;
+  const { index, title, description } = props;
 
-  console.log('img', img, 'title', title);
   return (
-    <div
-      className={`col-lg-4 col-md-6`}
-    >
+    <div className={`col-lg-4 col-md-6`}>
       <div
         id={`neigCard-${index}`}
         className={`${style.test} s-single-services wow fadeInUp animated`}
@@ -31,15 +28,15 @@ const NeighborCard = (props: NeigCardProps) => {
         data-delay='.2s'
         style={{ overflow: 'hidden' }}
       >
-        <div className='second-services-content'>
-          <h5>{title}</h5>
-          <p>{description}</p>
+        <div style={{height: '50px'}} className='second-services-content'>
+          <h5 style={{fontSize: '12px'}}>{title}</h5>
+          <p style={{fontSize: '12px'}}>{description}</p>
         </div>
         <div>
           <FontAwesomeIcon
             icon={['far', 'star-half']}
             pull='right'
-            color='#d29751'
+            color='#EF7F24'
             transform='right-28 grow-50'
           />
         </div>
@@ -49,40 +46,37 @@ const NeighborCard = (props: NeigCardProps) => {
 };
 
 const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
-  const neighborhoods = data.neighborhoods.split('|');
+    const amenities = data.amenitiesData.split(', ');
+    const formated = amenities.map((data) => data.split(' - '));
+    // console.log(formated);
 
-  return (
-    <section
-      id='services'
-      className='services-area services-bg services-two pt-120 pb-90'
-    >
-      <div className='container'>
-        <div className='row justify-content-center'>
-          <div className='col-xl-8 col-lg-10'>
-            <div
-              className='section-title text-center pl-40 pr-40 mb-80  fadeInDown animated'
-              data-animation='fadeInDown animated'
-              data-delay='.2s'
-            >
-              <span>Altos Vecinos</span>
-              <h2>{data.neighborhoodsTitle}</h2>
+    return (
+        <section id='services' className='services-area services-bg services-two pt-120 pb-90'>
+            <div className='container'>
+                <div className='row justify-content-center'>
+                    <div className='col-xl-8 col-lg-10'>
+                        <div
+                        className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80  fadeInDown animated`}
+                        data-animation='fadeInDown animated'
+                        data-delay='.2s'
+                        >
+                            <span style={{color: `${data.mainColor}`}}>{data.amenitiesTitle}</span>
+                        </div>
+                    </div>
+                </div>
+                <div className='row'>
+                {formated.map((neighborhood, index) => (
+                    <NeighborCard
+                    key={index}
+                    index={index}
+                    title={neighborhood[0]}
+                    description={neighborhood[1]}
+                    />
+                ))}
+                </div>
             </div>
-          </div>
-        </div>
-        <div className='row'>
-          {neighborhoods.map((neighborhood, index) => (
-            <NeighborCard
-              key={index}
-              img={neighborhood}
-              index={index}
-              title='Hospital'
-              description='Christ, General Hospital 0.18km'
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Neighborhoods;
