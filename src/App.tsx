@@ -13,10 +13,10 @@ import Slider from './components/Slider';
 import ChooseArea from './components/ChooseArea';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
-import YouTubeEmbed from "./components/Youtube.tsx";
 import MapSection from './components/MapSection.tsx';
 import MasterPlanSection from './components/MasterPlanSection.tsx';
 import SpecsSection from './components/SpecsSection.tsx';
+import YouTubeEmbed from "./components/Youtube.tsx";
 
 interface Data {
     [key: string]: string | string[];
@@ -59,16 +59,16 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
     //       <Footer data={data} />
     return (
         <div>
-            <Header data={data}  driveUrl={driveUrl}/>
-            <Slider data={data} driveUrl={driveUrl}/>
-            <YouTubeEmbed data={data}></YouTubeEmbed>
-           <About data={data} driveUrl={driveUrl}/>
-            <Counter data={data} driveUrl={driveUrl}/>
-            <Apartments data={data}  driveUrl={driveUrl}/>
-            <MapSection data={data} />
-            <Neighborhoods data={data} />
-            <MasterPlanSection data={data} />
-            <SpecsSection data={data} />
+            <Header data={data} driveUrl={driveUrl} />
+            <Slider data={data} driveUrl={driveUrl}  />
+            <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
+s           <About data={data}  driveUrl={driveUrl}  />
+            <Counter data={data}  driveUrl={driveUrl} />
+            <Apartments data={data}  driveUrl={driveUrl} />
+            <MapSection data={data} driveUrl={driveUrl}  />
+            <Neighborhoods data={data}  driveUrl={driveUrl} />
+            <MasterPlanSection data={data}  driveUrl={driveUrl} />
+            <SpecsSection data={data}  driveUrl={driveUrl} />
 
         </div>
     );
