@@ -17,6 +17,7 @@ import MapSection from './components/MapSection.tsx';
 import MasterPlanSection from './components/MasterPlanSection.tsx';
 import SpecsSection from './components/SpecsSection.tsx';
 import YouTubeEmbed from "./components/Youtube.tsx";
+import HouseModelSection from './components/HouseModelSection.tsx';
 
 interface Data {
     [key: string]: string | string[];
@@ -69,6 +70,7 @@ s           <About data={data}  driveUrl={driveUrl}  />
             <MasterPlanSection data={data}  driveUrl={driveUrl} />
             <SpecsSection data={data}  driveUrl={driveUrl} />
             <BrandSection data={data}  driveUrl={driveUrl} />
+            <HouseModelSection data={data}  driveUrl={driveUrl} />
             <Counter data={data}  driveUrl={driveUrl} />
 
         </div>
