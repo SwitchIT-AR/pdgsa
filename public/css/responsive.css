@@ -287,6 +287,8 @@
 }
 .main-menu {
 	text-align: left !important;
+	text-decoration: none;
+
 }
 .main-menu ul li {
 	display: block;
@@ -589,6 +591,7 @@
 
 }
 .main-menu .has-sub li a{
+	text-decoration: none;
 	padding-left:20px;
 	color: #d29751;
 }
@@ -756,6 +759,7 @@ margin-top: 21px;
 }
 .main-menu {
 	text-align: left !important;
+	text-decoration: none;
 }
 .main-menu ul li {
 	display: block;

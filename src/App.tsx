@@ -13,9 +13,13 @@ import Slider from './components/Slider';
 import ChooseArea from './components/ChooseArea';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
+<<<<<<< HEAD
 import MapSection from './components/MapSection.tsx';
 import MasterPlanSection from './components/MasterPlanSection.tsx';
 import SpecsSection from './components/SpecsSection.tsx';
+=======
+import YouTubeEmbed from "./components/Youtube.tsx";
+>>>>>>> b680ce3b246fbc1c1b4e07263ab845708e8ea265
 
 interface Data {
     [key: string]: string | string[];
@@ -24,7 +28,7 @@ interface Data {
 const App: React.FC = () => {
     const [data, setData] = useState<Data | null>(null);
     const [loading, setLoading] = useState(true);
-
+const driveUrl = "https://lh3.googleusercontent.com/d/"
     const fetchDataAsync = async () => {
         try {
             const result = await fetchData();
@@ -58,6 +62,7 @@ const App: React.FC = () => {
     //       <Footer data={data} />
     return (
         <div>
+<<<<<<< HEAD
             <Header data={data} />
             <Slider data={data} />
 s           <About data={data} />
@@ -67,6 +72,14 @@ s           <About data={data} />
             <Neighborhoods data={data} />
             <MasterPlanSection data={data} />
             <SpecsSection data={data} />
+=======
+            <Header data={data}  driveUrl={driveUrl}/>
+            <Slider data={data} driveUrl={driveUrl}/>
+            <YouTubeEmbed data={data}></YouTubeEmbed>
+           <About data={data} driveUrl={driveUrl}/>
+            <Counter data={data} driveUrl={driveUrl}/>
+            <Apartments data={data}  driveUrl={driveUrl}/>
+>>>>>>> b680ce3b246fbc1c1b4e07263ab845708e8ea265
 
         </div>
     );
