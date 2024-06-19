@@ -2,15 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import About from './components/About';
 import Counter from "./components/Counter.tsx";
-import Services from './components/Services';
 import BrandSection from './components/BrandSection';
-import Apartments from './components/Apartments';
 import Neighborhoods from './components/Neighborhoods';
-import Testimonials from './components/Testimonials';
-import Blog from './components/Blog';
 import Footer from './components/Footer';
 import Slider from './components/Slider';
-import ChooseArea from './components/ChooseArea';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
 import MapSection from './components/MapSection.tsx';
@@ -19,7 +14,6 @@ import SpecsSection from './components/SpecsSection.tsx';
 import YouTubeEmbed from "./components/Youtube.tsx";
 import HouseModelSection from './components/HouseModelSection.tsx';
 import InteriorSection from './components/InteriorSection.tsx';
-
 import SocialMedia from "./components/SocialMedia.tsx";
 import BrochureSection from './components/BrochureSection.tsx';
 interface Data {
@@ -59,14 +53,14 @@ const driveUrl = "https://lh3.googleusercontent.com/d/"
     }
 //             <ChooseArea data={data} />
     //          <Services data={data} />
-    //         <ContactForm data={data} />
+
 
     return (
         <div>
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl}  />
             <YouTubeEmbed data={data}  driveUrl={driveUrl} ></YouTubeEmbed>
-s           <About data={data}  driveUrl={driveUrl}  />
+            <About data={data}  driveUrl={driveUrl}  />
             {/* <Apartments data={data}  driveUrl={driveUrl} /> */}
             <MapSection data={data} driveUrl={driveUrl}  />
             <Neighborhoods data={data}  driveUrl={driveUrl} />
@@ -77,6 +71,7 @@ s           <About data={data}  driveUrl={driveUrl}  />
             <Counter data={data}  driveUrl={driveUrl} />
             <InteriorSection data={data}  driveUrl={driveUrl} />
             <BrochureSection data={data}  driveUrl={driveUrl} />
+            <ContactForm data={data} driveUrl={driveUrl}/>
             <SocialMedia data={data} driveUrl={driveUrl}></SocialMedia>
             <Footer data={data} driveUrl={driveUrl} />
         </div>
