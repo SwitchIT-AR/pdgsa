@@ -1142,7 +1142,7 @@ section:hover .section-title h2::before{width: 100px;}
 }
 .services-two .services-icon {
 	position: absolute;
-    right: -30px;
+  right: -30px;
 }
 .services-two .second-services-content{
     float: left;
