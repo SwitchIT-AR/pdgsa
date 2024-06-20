@@ -7,15 +7,15 @@ const YouTube: React.FC<CommonProps> = ({ data }) => {
         <div
             className={classes.autoHeight}
             style={{
-                 // Optional: Set background color
+                backgroundColor: 'white',
         }}>
             <div style={{
                 position: 'relative',
-                width: '100%',
-                maxWidth: '800px', // Set a max width for responsiveness
-                paddingBottom: '56.25%', // Maintain 16:9 aspect ratio
+                width: '90%',
+                height: 'auto',
+                paddingBottom: '20%', // Maintain 16:9 aspect ratio
+                paddingTop: '20%', // Maintain 16:9 aspect ratio
                 overflow: 'hidden',
-                borderRadius: '10px', // Optional: Add border-radius for rounded corners
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' // Optional: Add some shadow for better UI
             }}>
                 <iframe
