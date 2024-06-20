@@ -25,7 +25,7 @@ const About: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             </div>
                             <p className={classes.aboutDescText}>{data.aboutText}</p>
                             <div className={classes.centerDivContent}>
-                            <a href={data.aboutButtonLink} className="btn" style={{borderRadius: 50, backgroundColor:"var(--main-color)", color:"white", fontSize:"1rem", padding:"1rem"}}>{data.aboutButton}</a>
+                            <a href={data.aboutButtonLink} className="btn" style={{borderRadius: 50, backgroundColor:"var(--main-color)", color:"white", fontSize:"1rem", padding:"5px 25px"}}>{data.aboutButton}</a>
                             </div>
                         </div>
                     </div>
