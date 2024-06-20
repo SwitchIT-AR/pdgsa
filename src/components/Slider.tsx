@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import {CommonProps} from "../types/globalTypes.ts";
+import classes from './General.module.css';
 
 
 const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -49,7 +50,7 @@ const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
     );
 
     return (
-        <section id="home" className="slider-area fix p-relative">
+        <section id="home" className={`${classes.sectionMargins}slider-area fix p-relative`}>
             <Carousel fade>
                 {renderCarouselItem(data.sliderImage1)}
                 {renderCarouselItem(data.sliderImage2)}

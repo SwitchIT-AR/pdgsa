@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import {CommonProps} from "../types/globalTypes.ts";
+import classes from './General.module.css';
 
 
 const ContactForm: React.FC<CommonProps> = ({ data }) => {
@@ -40,7 +41,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
 
 
     return (
-        <div className="container">
+        <div className="container mb-50">
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-lg-8">
                     <div className="section-title text-center mb-80">
@@ -121,10 +122,22 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                         onChange={(e) => setMessage(e.target.value)}
                                     ></textarea>
                                 </div>
-                                <p style={{width:"500px"}}>{data.contactTerms}</p>
-                                <button type="submit" className="btn btn-dark">
+                                <p>{data.contactTerms}</p>
+                                <div className={classes.centerDivContent}>
+                                <button
+                                    type="submit"
+                                    className="btn"
+                                    style={{
+                                        backgroundColor: `${data.mainColor}`,
+                                        color: 'white',
+                                        borderRadius: '20px',
+                                        fontSize: '20px',
+                                        padding: '5px 10px',
+                                    }}
+                                >
                                     Enviar Mensaje
                                 </button>
+                                </div>
                                 {submitted && <p className="text-success mt-3">El mensaje ha sido enviado!</p>}
                                 {error &&
                                     <p className="text-danger mt-3">Ocurrió un problema al enviar el mensaje, intente de nuevo.</p>}

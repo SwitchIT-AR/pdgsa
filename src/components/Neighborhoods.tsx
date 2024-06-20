@@ -51,12 +51,12 @@ const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
     // console.log(formated);
 
     return (
-        <section id='services' className='services-area services-bg services-two pt-120 pb-90'>
+        <section id='services' className={`${style.servicesTwo} services-two`}>
             <div className='container'>
                 <div className='row justify-content-center'>
                     <div className='col-xl-8 col-lg-10'>
                         <div
-                        className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80  fadeInDown animated`}
+                        className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80 fadeInDown animated`}
                         data-animation='fadeInDown animated'
                         data-delay='.2s'
                         >

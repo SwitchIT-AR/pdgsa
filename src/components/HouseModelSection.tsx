@@ -5,17 +5,17 @@ import {CommonProps} from "../types/globalTypes.ts";
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='services' className='services-area pt-113 pb-150'>
+    <section id='services' className='services-area pt-10 pb-50'>
       <div className='container'>
         <div className='row justify-content-center'>
           <div className='col-xl-8 col-lg-10'>
             <div
               className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80  fadeInDown animated`}
             >
-              <span style={{ fontSize: '40px', color: `${data.mainColor}` }}>
+              <span className={style.homeModelTitle} style={{ color: `${data.mainColor}` }}>
                 {data.modelHomeTitle}
               </span>
-              <h2 style={{ fontSize: '35px' }}>{data.modelHomeSubtitle}</h2>
+              <h2 className={style.homeModelSubitle}>{data.modelHomeSubtitle}</h2>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-around' }}>
               <div style={{ objectFit: 'cover' }}>

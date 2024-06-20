@@ -55,7 +55,7 @@ const App: React.FC = () => {
 
     return (
         <div style={{ position: 'relative'}}>
-            <WhatsappButton />
+            <WhatsappButton data={data} driveUrl={driveUrl} />
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl} />
             <Youtube data={data} driveUrl={driveUrl} />
@@ -63,7 +63,7 @@ const App: React.FC = () => {
             <MapSection data={data} driveUrl={driveUrl} />
             <Neighborhoods data={data}  />
             <MasterPlanSection data={data} driveUrl={driveUrl} />
-            <SpecsSection data={data}  />
+            <SpecsSection data={data} driveUrl={driveUrl} />
             <BrandSection data={data} driveUrl={driveUrl} />
             <HouseModelSection data={data} driveUrl={driveUrl} />
             <Counter data={data} driveUrl={driveUrl} />

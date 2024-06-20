@@ -1,5 +1,6 @@
 import React from 'react';
 import {CommonProps} from "../types/globalTypes.ts";
+import classes from './General.module.css';
 
 
 const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -14,13 +15,13 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
             <div className="header-top second-header d-none d-md-block">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-lg-6">
-                            <div className="wellcome-text text-center text-lg-left">
+                        <div className="col-lg-4">
+                            <div className="wellcome-text text-center text-lg-left ">
                                 <p style={{fontSize:"2rem", color:"black"}}>{data.headerWelcomeText}</p>
                             </div>
                         </div>
-                        <div className="col-lg-6 d-none d-lg-block">
-                            <div style={{fontSize:"0.8rem"}} className="header-cta text-right">
+                        <div className="col-lg-8 d-none d-md-flex justify-content-end">
+                            <div style={{fontSize:"0.8rem"}} className={classes.headerInfo}>
                                 <ul>
                                     <li>
                                         <i className="fa fa-phone"></i>

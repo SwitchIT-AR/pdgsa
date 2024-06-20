@@ -1,5 +1,6 @@
 import React from "react";
 import {CommonProps} from "../types/globalTypes.ts";
+import classes from './General.module.css';
 
 
 
@@ -14,6 +15,7 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                 <h2 style={{ fontSize: '50px' }}>{data.brochureTitle}</h2>
               </div>
 
+              <div className={classes.centerDivContent}>
               <a
                 href='#'
                 style={{
@@ -27,7 +29,9 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               >
                 Descargar
               </a>
+              </div>
             </div>
+
           </div>
           <div className='col-lg-6'>
             <div style={{ objectFit: 'cover' }}>

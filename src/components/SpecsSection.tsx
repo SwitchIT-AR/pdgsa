@@ -1,19 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './General.module.css';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { CommonProps } from '../types/globalTypes';
 
-interface SpecsSectionProps {
-  data: {
-    specsTitle: string;
-    specsData: string;
-    mainColor: string;
-  };
-}
-
-const SpecCard = (props: { index: number; title: string; icon: string, color: string }) => {
+const SpecCard = (props: { index: number; title: string; icon: IconProp, color: string }) => {
   return (
     <div className='col-lg-4 col-md-6 mb-30' key={props.index}>
       <div
-        className='s-single-services wow fadeInUp  animated'
+        className={`${style.centerDivContent} s-single-services wow fadeInUp  animated`}
         data-animation='fadeInDown animated'
         data-delay='.2s'
         style={{ height: '200px'}}
@@ -38,8 +32,8 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
   );
 };
 
-const SpecsSection = (props: SpecsSectionProps) => {
-  const { data } = props;
+const SpecsSection: React.FC<CommonProps> = ({ data }) => {
+
   const specsList = data.specsData.split(', ');
   const formatedList = specsList.map((data) => data.split(' - '));
   const color = data.mainColor;
@@ -59,7 +53,7 @@ const SpecsSection = (props: SpecsSectionProps) => {
             <div className='row'>
               {
                 formatedList.map((data, index) => (
-                  <SpecCard index={index} title={data[1]} icon={data[0]} color={color} />
+                  <SpecCard index={index} title={data[1]} icon={data[0] as IconProp} color={color} />
                 ))
               }
               </div>

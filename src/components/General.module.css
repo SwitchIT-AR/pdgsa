@@ -7,6 +7,10 @@
     font-size: 50px;
 }
 
+.sectionTitle {
+    margin-bottom: 50px;
+}
+
 .sectionTitle span {
 	font-size: 50px;
 	font-weight: 500;
@@ -35,3 +39,135 @@
 	transition: .3s;
 }
 section:hover .sectionTitle span::before{width: 100px;}
+
+.sectionMargins {
+    /* margin-top: 100px; */
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+
+.autoHeight {
+    height: 100vh;
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+    padding: 0 10%;
+    background-color: '#f0f0f0';
+}
+
+.sAboutImg {
+	/* margin-top:10px; */
+	margin-bottom: 20px;
+}
+.sAboutImg img {
+	width: 100%;
+}
+
+.servicesTwo {
+    padding: 50px 0 50px 0;
+    /* height: 100vh; */
+    /* display: flex;
+    align-items: center; */
+    /* background: #f5f8fa; */
+}
+
+.servicesTwo .services-icon {
+	position: absolute;
+    right: -30px;
+}
+.servicesTwo .second-services-content{
+    float: left;
+    width: 70%;
+    margin-left: 20px;
+}
+.servicesTwo .s-single-services {
+    transition: .3s;
+    padding: 30px 15px;
+    border: 3px solid #f5f8fa;
+	margin-bottom: 30px;
+}
+
+.homeModelTitle {
+    font-size: '40px'
+}
+
+.homeModelSubtitle {
+    font-size: '35px'
+}
+
+.singleCounter {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+	/* width: 80px;
+	height: 80px;
+	background:#d29751; */
+	border-radius: 50%;
+	margin-bottom: 30px;
+	color:#fff;
+	font-size: 40px;
+	line-height: 80px;
+}
+
+.gmap {
+    border: 0;
+    width: 400px;
+    height: 400px;
+}
+
+.headerInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.headerInfo ul{
+    display: flex;
+    gap: 20px;
+}
+
+.headerInfo ul li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+@media (max-width: 768px) {
+    .centerDivContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .titleSizeSm {
+        font-size: 12px;
+    }
+
+    .sectionTitle span {
+        font-size: 25px;
+    }
+
+    .autoHeight {
+        height: auto;
+        padding: 50px 10px;
+        /* background-color: black; */
+    }
+
+    .homeModelTitle {
+        font-size: '20px'
+    }
+
+    .homeModelSubtitle {
+        font-size: '15px'
+    }
+
+    .gmap {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,15 +1,13 @@
 import React from 'react';
 import { CommonProps } from '../types/globalTypes';
+import classes from './General.module.css';
 
 const YouTube: React.FC<CommonProps> = ({ data }) => {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-            padding: '0 10%',
-            backgroundColor: '#f0f0f0' // Optional: Set background color
+        <div
+            className={classes.autoHeight}
+            style={{
+                 // Optional: Set background color
         }}>
             <div style={{
                 position: 'relative',

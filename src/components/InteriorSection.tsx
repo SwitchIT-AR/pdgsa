@@ -22,7 +22,7 @@ const InteriorCard = (props: { title: string; image: string }) => {
 
 const InteriorSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='services' className='services-area mt-30'>
+    <section id='services' className='mt-50'>
       <div className='container'>
         <div className='row justify-content-center'>
           <div className='col-xl-8 col-lg-10'>

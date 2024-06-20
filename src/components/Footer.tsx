@@ -1,5 +1,6 @@
 import React from 'react';
 import {CommonProps} from "../types/globalTypes.ts";
+import classes from './General.module.css';
 
 
 
@@ -16,7 +17,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             <div className="footer-widget mb-30">
                                 <div className="footer-text mb-20">
                                     <img style={{width: 280, height: 100, objectFit: "cover"}}
-                                         src={`${driveUrl}${data.logoWhite}`} alt="logo"/>
+                                        src={`${driveUrl}${data.logoWhite}`} alt="logo"/>
                                     <p>{data.footerText}</p>
                                 </div>
                             </div>
@@ -39,9 +40,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             <div className="footer-widget mb-30">
                                 <iframe
                                     src={data.gmapsLink}
-                                    style={{border: 0,
-                                        width:"400px",
-                                        height:"400px"}}
+                                    className={classes.gmap}
                                     allowFullScreen={false}
                                     loading="lazy"
                                     title="Google Maps"
