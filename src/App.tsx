@@ -6,7 +6,7 @@ import Counter from './components/Counter';
 import BrandSection from './components/BrandSection';
 import Neighborhoods from './components/Neighborhoods';
 import Footer from './components/Footer';
-import Slider from './components/Slider';
+import Slider from './components/slider/Slider.tsx';
 import ContactForm from './components/ContactForm';
 import { fetchData } from './api';
 import MapSection from './components/MapSection';
@@ -20,17 +20,26 @@ import BrochureSection from './components/BrochureSection';
 import { Data } from './types/globalTypes';
 import WhatsappButton from './components/WhatsappButton.tsx';
 
+// import classes from './components/General.module.css';
+import './components/styles/globalVariables.css';
+
 const driveUrl = "https://lh3.googleusercontent.com/d/";
 
 const App: React.FC = () => {
     const [data, setData] = useState<Data | null>(null);
     const [loading, setLoading] = useState(true);
 
+    const updatePrimaryColor = (newColor: string) => {
+        document.documentElement.style.setProperty('--main-color', newColor);
+        console.log()
+    };
+
     const fetchDataAsync = async () => {
         try {
             const result = await fetchData();
             if (result && typeof result === 'object') {
                 setData(result);
+                updatePrimaryColor(result.mainColor);
             } else {
                 console.error('Unexpected data format:', result);
             }
