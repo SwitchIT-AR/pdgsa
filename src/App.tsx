@@ -1,7 +1,7 @@
 // App.tsx
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
-import About from './components/About';
+import About from './components/about/About.tsx';
 import Counter from './components/Counter';
 import BrandSection from './components/BrandSection';
 import Neighborhoods from './components/Neighborhoods';
