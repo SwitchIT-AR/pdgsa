@@ -29,14 +29,14 @@ const NeighborCard = (props: NeigCardProps) => {
         style={{ overflow: 'hidden' }}
       >
         <div style={{height: '50px'}} className='second-services-content'>
-          <h5 style={{fontSize: '12px'}}>{title}</h5>
-          <p style={{fontSize: '12px'}}>{description}</p>
+          <h5 style={{fontSize: '17px'}}>{title}</h5>
+          <p style={{fontSize: '15px'}}>{description}</p>
         </div>
         <div>
           <FontAwesomeIcon
             icon={['far', 'star-half']}
             pull='right'
-            color='#EF7F24'
+            color='var(--main-color)'
             transform='right-28 grow-50'
           />
         </div>
@@ -48,7 +48,6 @@ const NeighborCard = (props: NeigCardProps) => {
 const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
     const amenities = data.amenitiesData.split(', ');
     const formated = amenities.map((data) => data.split(' - '));
-    // console.log(formated);
 
     return (
         <section id='services' className={`${style.servicesTwo} services-two`}>
@@ -60,7 +59,7 @@ const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
                         data-animation='fadeInDown animated'
                         data-delay='.2s'
                         >
-                            <span style={{color: `${data.mainColor}`}}>{data.amenitiesTitle}</span>
+                            <span style={{color: `var(--main-color)`}}>{data.amenitiesTitle}</span>
                         </div>
                     </div>
                 </div>
