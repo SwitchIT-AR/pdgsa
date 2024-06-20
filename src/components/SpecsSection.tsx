@@ -7,12 +7,12 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
   return (
     <div className='col-lg-4 col-md-6 mb-30' key={props.index}>
       <div
-        className={`${style.centerDivContent} s-single-services wow fadeInUp  animated`}
+        className={`${style.centerDivContent} wow fadeInUp  animated`}
         data-animation='fadeInDown animated'
         data-delay='.2s'
-        style={{ height: '200px'}}
+        style={{ }}
       >
-        <div style={{ backgroundColor: 'var(--main-color)', borderRadius: '50%', width: '50px', height: '50px', padding:'7px' }}>
+        <div className={style.imgContainer}>
           <img style={{ width: '100%', height: 'auto' }} src={`${props.driveUrl}${props.icon}`} alt="" />
         </div>
         <div className='second-services-content2'>
