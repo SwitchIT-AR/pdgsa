@@ -135,6 +135,14 @@ section:hover .sectionTitle span::before{width: 100px;}
     gap: 5px;
 }
 
+.centerDivContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+}
+
 @media (max-width: 768px) {
     .centerDivContent {
         display: flex;
