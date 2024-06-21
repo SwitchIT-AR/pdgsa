@@ -17,7 +17,7 @@ const About: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 </div>
                     </div>
                     <div className="col-lg-6">
-                        <div className={`${classes.aboutContent} pl-30`}>
+                        <div className={`${classes.aboutContent}`}>
                             <div className={`${classes.aboutTitle}`}>
                                 <span>{data.aboutTitle} </span>
                                 <h2>{data.aboutSubtitle} </h2>

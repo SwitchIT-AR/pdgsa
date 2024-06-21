@@ -1,5 +1,7 @@
 import React from 'react';
 import {CommonProps} from "../types/globalTypes.ts";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 
 const SocialMedia: React.FC<CommonProps> = ({ data }) => {
@@ -13,7 +15,7 @@ const SocialMedia: React.FC<CommonProps> = ({ data }) => {
                     {iconsArray.map((icon, index) => (
                         <div key={index} className="col-auto">
                             <a href={linksArray[index].trim()} target="_blank" rel="noopener noreferrer">
-                                <i className={`fab ${icon}`} style={{ fontSize: '2rem', color: '#fff', margin: '0 10px' }}></i>
+                                <FontAwesomeIcon icon={`fa-brands ${icon}` as IconProp} style={{ fontSize: '2rem', color: '#fff', margin: '0 10px' }} />
                             </a>
                         </div>
                     ))}

@@ -1,6 +1,8 @@
 import React from 'react';
 import {CommonProps} from "../../types/globalTypes.ts";
 import classes from './header.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 
 const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -19,7 +21,8 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             <div style={{fontSize:'0.8rem'}} className={classes.headerInfo}>
                                 <ul>
                                     <li>
-                                        <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-phone"></i>
+                                    <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '1.3rem' }} icon={`fa-brands fa-whatsapp` as IconProp} />
+                                        {/* <i  className="fa-brands fa-whatsapp"></i> */}
                                         <span>{data.headerPhone}</span>
                                     </li>
                                     <li>

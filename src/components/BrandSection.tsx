@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {CommonProps} from "../types/globalTypes.ts";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 
 const BrandSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -12,7 +13,7 @@ const BrandSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                     <div className="section-title cta-title wow fadeInLeft animated" data-animation="fadeInDown animated" data-delay=".2s">
                         <h2>{data.brandTitle}</h2>
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                          <FontAwesomeIcon style={{ color: 'white', fontSize: '50px' }} icon="fa-brands fa-whatsapp" />
+                          <FontAwesomeIcon style={{ color: 'white', fontSize: '50px' }} icon={`fa-brands fa-whatsapp` as IconProp} />
                           <h3>{data.brandPhone}</h3>
                         </div>
                         <div className="cta-btn s-cta-btn wow fadeInRight animated" data-animation="fadeInDown animated" data-delay=".2s">
