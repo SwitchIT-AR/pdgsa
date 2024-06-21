@@ -1,0 +1,34 @@
+.secondHeader {
+  display: flex;
+  justify-content: space-around;
+  background: #f4f4fe;
+  padding: 10px 0;
+}
+
+.headerInfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerInfo ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.headerInfo ul li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .secondHeader {
+    display: none;
+  }
+}

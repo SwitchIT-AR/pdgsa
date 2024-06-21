@@ -26,7 +26,7 @@ const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-lg-6'>
+                        <div className='col-lg-8'>
                         <ul className={classes.iconsGroup}>
                             <li>
                             <FontAwesomeIcon

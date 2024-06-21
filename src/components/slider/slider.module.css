@@ -34,7 +34,7 @@
 
 .sliderContent h2 {
   color: white;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   font-weight: 600;
 }
@@ -58,11 +58,11 @@
 .sliderPrice h3{
 color:#fff;
 font-weight: 600;
-font-size: 19px;
+font-size: 22px;
 }
 .sliderPrice h2 {
   color:#fff;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -81,7 +81,7 @@ font-size: 19px;
   color: #fff;
   border-radius: 20px;
   padding: 5px 25px;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .iconsGroup {
@@ -122,7 +122,7 @@ font-size: 19px;
   }
 
   .sliderContent h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .btnGroup a {

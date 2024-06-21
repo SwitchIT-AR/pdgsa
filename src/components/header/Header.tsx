@@ -1,6 +1,6 @@
 import React from 'react';
-import {CommonProps} from "../types/globalTypes.ts";
-import classes from './General.module.css';
+import {CommonProps} from "../../types/globalTypes.ts";
+import classes from './header.module.css';
 
 
 const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -11,35 +11,27 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const areArraysValid = itemsArray.length === linksArray.length;
 
     return (
-        <header className="header-area">
-            <div className="header-top second-header d-none d-md-block">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-4">
-                            <div className="wellcome-text text-center text-lg-left ">
-                                <p style={{fontSize:"2rem", color:"black"}}>{data.headerWelcomeText}</p>
+        <header className="">
+            <div className={`${classes.secondHeader}`}>
+                            <div className="">
+                                <p style={{padding: '0', margin: '0' ,fontSize:'1.2rem', color:"black"}}>{data.headerWelcomeText}</p>
                             </div>
-                        </div>
-                        <div className="col-lg-8 d-none d-md-flex justify-content-end">
-                            <div style={{fontSize:"0.8rem"}} className={classes.headerInfo}>
+                            <div style={{fontSize:'0.8rem'}} className={classes.headerInfo}>
                                 <ul>
                                     <li>
-                                        <i className="fa fa-phone"></i>
+                                        <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-phone"></i>
                                         <span>{data.headerPhone}</span>
                                     </li>
                                     <li>
-                                        <i className="fa fa-mail-bulk"></i>
+                                        <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-mail-bulk"></i>
                                         <span>{data.headerEmail}</span>
                                     </li>
                                     <li>
-                                        <i className="fa fa-clock"></i>
+                                        <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-clock"></i>
                                         <span>{data.headerHours}</span>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div id="header-sticky" className="" style={{backgroundColor: data.headerBackground}}>
                 <div className="container">
@@ -52,7 +44,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             </div>
                             <div className="col-xl-10 col-lg-9">
                                 <div className="responsive"><i className="icon dripicons-align-right"></i></div>
-                                <div className="main-menu text-center" style={{fontSize:"0.8rem" }}>
+                                <div className="main-menu text-center" style={{fontSize:"0.1rem" }}>
                                     <nav id="mobile-menu">
                                         <ul>
                                             {areArraysValid ? (

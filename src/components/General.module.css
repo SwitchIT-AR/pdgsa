@@ -116,25 +116,6 @@ section:hover .sectionTitle span::before{width: 100px;}
     height: 400px;
 }
 
-.headerInfo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-.headerInfo ul{
-    display: flex;
-    gap: 20px;
-}
-
-.headerInfo ul li{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 .centerDivContent {
     border: 2px solid #f5f8fa;
     height: 170px;

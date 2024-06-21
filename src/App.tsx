@@ -1,6 +1,6 @@
 // App.tsx
 import React, { useEffect, useState } from 'react';
-import Header from './components/Header';
+import Header from './components/header/Header.tsx';
 import About from './components/about/About.tsx';
 import Counter from './components/Counter';
 import BrandSection from './components/BrandSection';
