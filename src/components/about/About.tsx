@@ -8,7 +8,7 @@ const About: React.FC<CommonProps> = ({ data, driveUrl }) => {
         <section id="about" className="about-area about-p pb-50 ">
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-6 mb-sm-5">
+                    <div className={`${classes.imgSection} col-lg-6 mb-sm-5`}>
                                 <div className={`${classes.sAboutImg}`}>
                                     <img src={`${driveUrl}${data.aboutImage}`} alt="img" />
                                     <div className={`${classes.aboutText}`}>

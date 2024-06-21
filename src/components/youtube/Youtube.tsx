@@ -1,6 +1,6 @@
 import React from 'react';
-import { CommonProps } from '../types/globalTypes';
-import classes from './General.module.css';
+import { CommonProps } from '../../types/globalTypes';
+import classes from './youtube.module.css';
 
 const YouTube: React.FC<CommonProps> = ({ data }) => {
     return (

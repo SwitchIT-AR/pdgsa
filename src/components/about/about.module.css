@@ -11,8 +11,6 @@
   position: absolute;
   bottom: 30%;
   right: 5px;
-  /* height: 135px;
-  width: 265px; */
   padding: 20px 40px;
   text-align: center;
   background: var(--main-color);
@@ -75,5 +73,9 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.imgSection {
+  margin-bottom: 2rem;
 }
 }

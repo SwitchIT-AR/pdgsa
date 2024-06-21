@@ -1,0 +1,17 @@
+.autoHeight {
+  height: 100vh;
+  display: flex;
+  justify-Content: center;
+  align-Items: center;
+  padding: 0 10%;
+  background-color: '#f0f0f0';
+}
+
+
+@media (max-width: 768px) {
+  .autoHeight {
+    height: 40vh;
+    padding: 50px 10px;
+    /* background-color: black; */
+  }
+}

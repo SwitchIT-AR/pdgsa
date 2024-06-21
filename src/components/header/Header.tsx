@@ -39,12 +39,12 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         <div className="row align-items-center">
                             <div className="col-xl-2 col-lg-2">
                                 <div className="logo">
-                                    <a href="index.html"><img style={{width:"110px"}} src={`${driveUrl}${data.logo}`} alt="logo"/></a>
+                                    <a href="index.html"><img style={{width:"100%", height: 'auto'}} src={`${driveUrl}${data.logo}`} alt="logo"/></a>
                                 </div>
                             </div>
                             <div className="col-xl-10 col-lg-9">
                                 <div className="responsive"><i className="icon dripicons-align-right"></i></div>
-                                <div className="main-menu text-center" style={{fontSize:"0.1rem" }}>
+                                <div className="main-menu text-center" style={{fontSize:"0.8rem" }}>
                                     <nav id="mobile-menu">
                                         <ul>
                                             {areArraysValid ? (

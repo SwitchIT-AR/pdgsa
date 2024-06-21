@@ -13,7 +13,7 @@ interface CounterData {
 
 const Counter: React.FC<CommonProps> = ({ data }) => {
     const counterData: CounterData[] = [
-        { icon: ['fas', 'pencil-ruler'], count: parseInt(data.counterCount1, 10), label: data.counterLabel1 },
+        { icon: ['fas', 'pencil-ruler'], count: parseFloat(data.counterCount1), label: data.counterLabel1 },
         { icon: ['fas', 'bath'], count: parseInt(data.counterCount2, 10), label: data.counterLabel2 },
         { icon: ['fas', 'bed'], count: parseInt(data.counterCount3, 10), label: data.counterLabel3 },
         { icon: ['fas', 'car'], count: parseInt(data.counterCount4, 10), label: data.counterLabel4 },
