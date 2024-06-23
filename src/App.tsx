@@ -7,7 +7,7 @@ import BrandSection from './components/BrandSection';
 import Neighborhoods from './components/Neighborhoods';
 import Footer from './components/Footer';
 import Slider from './components/slider/Slider.tsx';
-import ContactForm from './components/ContactForm';
+import ContactForm from './components/contact/ContactForm.tsx';
 import { fetchData } from './api';
 import MapSection from './components/MapSection';
 import MasterPlanSection from './components/MasterPlanSection';
@@ -16,7 +16,7 @@ import Youtube from "./components/youtube/Youtube.tsx";
 import HouseModelSection from './components/houseModel/HouseModelSection.tsx';
 import InteriorSection from './components/InteriorSection';
 import SocialMedia from './components/SocialMedia';
-import BrochureSection from './components/BrochureSection';
+import BrochureSection from './components/brochure/BrochureSection.tsx';
 import { Data } from './types/globalTypes';
 import WhatsappButton from './components/WhatsappButton.tsx';
 

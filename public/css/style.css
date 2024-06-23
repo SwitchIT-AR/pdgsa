@@ -2679,7 +2679,7 @@ section:hover .section-title h2::before {
   width: 40px;
   text-align: center;
   line-height: 40px;
-  background: #d29751;
+  background: var(--main-color);
   border-radius: 50%;
   color: #fff;
   font-size: 14px;
@@ -2693,7 +2693,7 @@ section:hover .section-title h2::before {
   color: #fff;
 }
 .contact-info h5 {
-  color: #d29751;
+  color: var(--main-color);
 }
 .single-cta {
   border-bottom: 1px solid;
@@ -2709,7 +2709,7 @@ div.single-cta:last-child {
   margin-bottom: 0;
 }
 .single-cta p a {
-  color: #d29751;
+  color: var(--main-color);
 }
 .s-cta-btn .btn {
   background: #383838;

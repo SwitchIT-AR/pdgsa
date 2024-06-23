@@ -1,0 +1,45 @@
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sectionTitle span {
+  font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--main-color);
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 20px;
+}
+.sectionTitle h2 {
+  font-size: 40px;
+  padding-bottom: 30px;
+  margin-bottom: 0px;
+  position: relative;
+}
+.sectionTitle h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  width: 60px;
+  background: var(--main-color);
+  margin: auto;
+  transition: 0.3s;
+}
+section:hover .sectionTitle h2::before {
+  width: 100px;
+}
+
+@media (max-width: 768px) {
+  .centerDivContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+}

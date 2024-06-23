@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import {CommonProps} from "../types/globalTypes.ts";
-import classes from './General.module.css';
+import {CommonProps} from "../../types/globalTypes.ts";
+import classes from './contact.module.css';
 
 
 const ContactForm: React.FC<CommonProps> = ({ data }) => {
@@ -44,10 +44,9 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
         <div className="container mb-50">
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-lg-8">
-                    <div className="section-title text-center mb-80">
-                        <span>Contact</span>
-                        <h2>{data.contactTitle}</h2>
-                        <p>{data.contactSubtitle}</p>
+                    <div className={classes.sectionTitle}>
+                        <span>{data.contactTitle}</span>
+                        <h2>{data.contactSubtitle}</h2>
                     </div>
                 </div>
             </div>

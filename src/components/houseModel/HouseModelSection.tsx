@@ -5,7 +5,7 @@ import {CommonProps} from "../../types/globalTypes.ts";
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='services' className='services-area pt-10 pb-50'>
+    <section id='houseModel' className='pt-10 pb-50'>
       {/* <div className='container'> */}
         <div className='row justify-content-center'>
           <div style={{ padding: '0 5rem' }}>
