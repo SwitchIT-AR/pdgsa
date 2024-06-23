@@ -2,7 +2,7 @@ import whatsapp from "../assets/whatsapp-logo.png";
 import { CommonProps } from "../types/globalTypes";
 
 const WhatsappButton: React.FC<CommonProps> = ({ data }) => {
-  const phoneNumber = data.brandPhone || '573002222222';
+  const phoneNumber = data.whatsappNumber || '573002222222';
   return (
     <div style={{ zIndex: 10000, position: 'fixed', bottom: 30, right: 30}}>
       <a

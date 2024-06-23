@@ -99,6 +99,7 @@ export interface Data {
     brochurePdf: string;
     socialMediaIcons: string;
     socialMediaLinks: string;
+    whatsappNumber: string;
 }
 
 export interface CommonProps {

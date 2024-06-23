@@ -6,6 +6,6 @@ export const fetchData = async () => {
         return response.data;
     } catch (error) {
         console.error('Error fetching data from server:', error);
-        return {};
+        return error as Error;
     }
 };

@@ -22,12 +22,14 @@ import WhatsappButton from './components/WhatsappButton.tsx';
 
 // import classes from './components/General.module.css';
 import './components/styles/globalVariables.css';
+import LoadingPage from './components/loading/LoadingPage.tsx';
 
 const driveUrl = "https://lh3.googleusercontent.com/d/";
 
 const App: React.FC = () => {
-    const [data, setData] = useState<Data | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [data, setData] = useState<Data>();
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState<Error | null>(null);
 
     const updatePrimaryColor = (newColor: string) => {
         document.documentElement.style.setProperty('--main-color', newColor);
@@ -36,6 +38,7 @@ const App: React.FC = () => {
 
     const fetchDataAsync = async () => {
         try {
+            setLoading(true);
             const result = await fetchData();
             if (result && typeof result === 'object') {
                 setData(result);
@@ -45,6 +48,7 @@ const App: React.FC = () => {
             }
         } catch (error) {
             console.error('Error fetching data:', error);
+            setError(error as Error);
         } finally {
             setLoading(false);
         }
@@ -55,13 +59,18 @@ const App: React.FC = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return(
+            <LoadingPage />
+        )
     }
 
     if (!data) {
         return <div>Error loading data</div>;
     }
 
+    console.log('error:', error);
+    console.log('loading', loading);
+    console.log('data', data);
     return (
         <div style={{ position: 'relative'}}>
             <WhatsappButton data={data} driveUrl={driveUrl} />

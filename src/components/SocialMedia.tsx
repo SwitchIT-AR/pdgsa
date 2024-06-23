@@ -9,7 +9,7 @@ const SocialMedia: React.FC<CommonProps> = ({ data }) => {
     const linksArray = data.socialMediaLinks.split('|');
 
     return (
-        <div className="social-media-container" style={{ backgroundColor: '#FF6F00', padding: '20px 0' }}>
+        <div className="social-media-container" style={{ backgroundColor: 'var(--main-color', padding: '20px 0' }}>
             <div className="container">
                 <div className="row justify-content-center">
                     {iconsArray.map((icon, index) => (
