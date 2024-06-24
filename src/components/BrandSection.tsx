@@ -5,6 +5,8 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 
 const BrandSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
+  const phoneNumber = data.whatsappNumber || '573002222222';
+
   return (
     <section style={{ marginBottom: '40px', backgroundImage: `url(${driveUrl}${data.brandHeroImage})`, width: '100%', height: '100%', top: '0', left: '0', right: '0', bottom: '0', backgroundColor: 'rgba(0,0,0,0.5)',zIndex: '2'}} className="cta-area cta-bg pt-120 pb-120">
         <div className="container">
@@ -17,7 +19,7 @@ const BrandSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                           <h3>{data.brandPhone}</h3>
                         </div>
                         <div className="cta-btn s-cta-btn wow fadeInRight animated" data-animation="fadeInDown animated" data-delay=".2s">
-                            <a  style={{ backgroundColor: `${data.mainColor}`, fontSize: '25px', borderRadius: '20px', padding: '4px 20px' }} href="#" className="btn">{data.botonbrandtitle}</a>
+                            <a style={{ backgroundColor: `${data.mainColor}`, fontSize: '25px', borderRadius: '20px', padding: '4px 20px' }} href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="btn">{data.botonbrandtitle}</a>
                         </div>
                     </div>
 

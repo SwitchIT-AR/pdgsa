@@ -1,6 +1,7 @@
 import React from "react";
 import {CommonProps} from "../../types/globalTypes.ts";
 import classes from './brochure.module.css';
+import Modal from "../modal/Modal.tsx";
 
 
 
@@ -16,6 +17,7 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               </div>
 
               <div className={classes.centerDivContent}>
+                <Modal />
               <a
                 href='#'
                 style={{
@@ -26,6 +28,8 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                   padding: '5px 40px',
                 }}
                 className='btn'
+                data-toggle="modal"
+                data-target="#exampleModalCenter"
               >
                 Descargar
               </a>
