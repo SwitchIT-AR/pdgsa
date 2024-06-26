@@ -1,9 +1,9 @@
 .autoHeight {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-Content: center;
   align-Items: center;
-  padding: 0 10%;
+  padding: 5%;
   background-color: '#f0f0f0';
 }
 
