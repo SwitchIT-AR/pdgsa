@@ -12,6 +12,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
     const [invalid, setInvalidate] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
+    const [termns, setTermns] = useState<boolean>(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -90,7 +91,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                     <form onSubmit={handleSubmit} className="contact-form">
                         <div className="row">
                             <div className="col-lg-12">
-                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <div className={`${classes.contactField} p-relative c-name mb-20`}>
                                     <label className={classes.label} htmlFor='contactName'>Nombre y Apellido <span>*</span></label>
                                     <input
                                         id='contactName'
@@ -102,7 +103,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <div className={`${classes.contactField} p-relative c-name mb-20`}>
                                 <label className={classes.label} htmlFor='contactMail'>Correo Electrónico <span>*</span></label>
                                     <input
                                         id='contactMail'
@@ -114,7 +115,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <div className={`${classes.contactField} p-relative c-name mb-20`}>
                                 <label className={classes.label} htmlFor='contactName'>WhatsApp <span>*</span></label>
                                     <input
                                         type="phone"
@@ -125,7 +126,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className={`${classes.contactField} p-relative c-name mb-20`}>
+                                <div className={`${classes.contactField} p-relative c-name mb-10`}>
                                     <textarea
                                         name="body"
                                         id="body"
@@ -137,12 +138,25 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                     ></textarea>
                                 </div>
                                 { invalid &&
-                                    <div style={{ color: 'red', marginBottom: '15px'
+                                    <div style={{ color: 'red', marginBottom: '15px', fontSize: '10px'
                                     }}>
                                         Los campos Nombre y Apellido, Email y Teléfono son necesarios para continuar con la consulta.
                                     </div>
                                 }
-                                <p>{data.contactTerms}</p>
+                                <div style={{ display: 'flex', gap: '7px', alignItems: 'center', marginBottom: '15px' }}>
+                                    <input
+                                        style={{ }}
+                                        type='checkbox'
+                                        onChange={(e) => {setTermns(e.target.checked)}}
+                                    />
+                                    <p style={{ margin: 0 }}>Acepto los <a href="">términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                                </div>
+                                { (invalid && !termns) &&
+                                    <div style={{ color: 'red', marginBottom: '15px', fontSize: '10px'
+                                    }}>
+                                        Es necesario aceptar los terminos y condiciones para poder continuar. 
+                                    </div>
+                                }
                                 <div className={classes.centerDivContent}>
                                 <button
                                     type="submit"
