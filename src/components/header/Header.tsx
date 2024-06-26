@@ -13,7 +13,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const areArraysValid = itemsArray.length === linksArray.length;
 
     return (
-        <header className="">
+        <header className="header-area">
             <div className={`${classes.secondHeader}`}>
                             <div className="">
                                 <p style={{padding: '0', margin: '0' ,fontSize:'1.2rem', color:"black"}}>{data.headerWelcomeText}</p>

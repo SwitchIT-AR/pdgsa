@@ -1,6 +1,7 @@
-import { MouseEvent, useState } from 'react';
+import { useRef, useState } from 'react';
 import classes from './modal.module.css';
 import axios from 'axios';
+import pdf from '../../assets/Brochure-JDF.pdf';
 
 const Modal = () => {
   const [name, setName] = useState('');
@@ -8,11 +9,21 @@ const Modal = () => {
   const [phone, setPhone] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+  const [validation, setValidation] = useState<boolean>(false);
+  const modalRef = useRef<HTMLButtonElement>(null);
+  const pdfRef = useRef<HTMLAnchorElement>(null);
 
-  const handleSubmit = async (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setSubmitted(false);
     setError(false);
+
+    
+
+    if (!name || !mail || !phone) {
+      setValidation(true);
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -30,6 +41,11 @@ const Modal = () => {
         setName('');
         setEmail('');
         setPhone('');
+        setValidation(false);
+        if (modalRef.current && pdfRef.current) {
+          modalRef.current.click();
+          pdfRef.current.click();
+        }
       } else {
         setError(true);
       }
@@ -41,8 +57,9 @@ const Modal = () => {
   return (
     <>
       <div
-        className='modal fade'
-        id='exampleModalCenter'
+        className='modal'
+        
+        id='brochureModal'
         tabIndex={-1}
         role='dialog'
         aria-labelledby='exampleModalCenterTitle'
@@ -65,6 +82,14 @@ const Modal = () => {
                 </button>
               </div>
               <div className={`${classes.form} modal-body`}>
+              {
+                    validation &&
+                      <div style={{ fontSize: '12px', color: 'red', marginBottom: '10px'}}>Por favor, complete todos los datos para continuar.</div>
+                  }
+              {
+                    error &&
+                      <div style={{ fontSize: '12px', color: 'red', marginBottom: '10px'}}>Ah ocurrido un error, por favor intentelo nuevamente.</div>
+                  }
                 <div className='mb-1'>
                   <label htmlFor='name'>Nombre y Apellido</label>
                   <input
@@ -73,9 +98,13 @@ const Modal = () => {
                     aria-describedby='nombre'
                     placeholder='Ej: Juan Perez'
                     onChange={(e) => setName(e.target.value)}
+                    value={name}
                     required
                   />
-                  <div className='invalid-feedback'>Por favor, completar con Nombre y Apellido.</div>
+                  {/* {
+                    validation && 
+                  <div className=''>Por favor, completar con Nombre y Apellido.</div>
+                  } */}
                 </div>
                 <div className='mb-1'>
                   <label htmlFor='email'>Correo Electrónico</label>
@@ -86,9 +115,9 @@ const Modal = () => {
                     aria-describedby='nombre'
                     placeholder='Ej: juan_perez@email.com'
                     onChange={(e) => setEmail(e.target.value)}
+                    value={mail}
                     required
                   />
-                  <div className='invalid-feedback'>Por favor, completar con un Email valido.</div>
                 </div>
                 <div className='mb-1'>
                   <label htmlFor='phone'>Teléfono</label>
@@ -99,9 +128,10 @@ const Modal = () => {
                     placeholder='Ej: 50723456789'
                     style={{ color: 'gray' }}
                     onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
                     required
                   />
-                  <div className='invalid-feedback'>Por favor, completar con un telefono.</div>
+                  
                 </div>
               </div>
               <div className='modal-footer'>
@@ -109,17 +139,22 @@ const Modal = () => {
                   type='button'
                   className='btn btn-secondary'
                   data-dismiss='modal'
+                  onClick={() => setValidation(false)}
                 >
                   Cerrar
                 </button>
                 <button
+                  id='button-modal'
                   type='submit'
-                  data-dismiss='modal'
+                  // data-dismiss='modal'
                   className='btn'
                   style={{ backgroundColor: 'var(--main-color)', color: 'white' }}
                   onClick={(e) => handleSubmit(e)}
                 >
-                  Enviar y Descargar
+                  Enviar y Descargar  
+                </button>
+                  <a ref={pdfRef} href={pdf} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
+                <button ref={modalRef} style={{ display: 'none' }} type='button' data-dismiss='modal' id='hiddenClose'>
                 </button>
               </div>
             </form>

@@ -29,7 +29,7 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                 }}
                 className='btn'
                 data-toggle="modal"
-                data-target="#exampleModalCenter"
+                data-target="#brochureModal"
               >
                 Descargar
               </a>
