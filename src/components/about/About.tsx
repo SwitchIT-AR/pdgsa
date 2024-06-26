@@ -5,7 +5,7 @@ import classes from './about.module.css';
 
 const About: React.FC<CommonProps> = ({ data, driveUrl }) => {
     return (
-        <section id="about" className="about-area about-p pb-50 ">
+        <section id="Proyectos" className="about-area about-p pb-50 ">
             <div className="container">
                 <div className="row">
                     <div className={`${classes.imgSection} col-lg-6 mb-sm-5`}>

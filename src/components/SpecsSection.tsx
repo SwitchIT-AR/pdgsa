@@ -29,7 +29,7 @@ const SpecsSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   const formatedList = specsList.map((data) => data.split(' - '));
   const color = data.mainColor;
   return (
-    <section id='services' className='services-area'>
+    <section id='Caracteristicas' className='services-area'>
       <div className='container'>
         {}
         <div className='row justify-content-center'>

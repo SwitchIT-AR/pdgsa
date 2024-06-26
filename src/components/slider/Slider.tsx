@@ -8,7 +8,8 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const renderCarouselItem = (image: string) => (
         <Carousel.Item>
-            <div
+            <section
+                id='Inicio'
                 className='single-slider slider-bg d-flex align-items-center'
                 style={{ backgroundImage: `url(${driveUrl}${image})` }}
             >
@@ -18,7 +19,7 @@ const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             <div className={`${classes.sliderContent}`}>
                                 <h2>{data.sliderText1}</h2>
                                 <div className={`${classes.btnGroup}`}>
-                                    <a href='#contact'>{data.sliderButton1}</a>
+                                    <a href='#Contactanos'>{data.sliderButton1}</a>
                                     <div className={`${classes.sliderPrice}`}>
                                         <h3>{data.sliderSubText5}</h3>
                                         <h2>{data.sliderPrice}</h2>
@@ -60,7 +61,7 @@ const Slider: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </Carousel.Item>
     );
 

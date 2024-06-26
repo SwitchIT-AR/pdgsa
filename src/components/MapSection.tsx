@@ -5,7 +5,7 @@ import {CommonProps} from "../types/globalTypes.ts";
 const MapSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
 
-  <section id='services'>
+  <section id='Alrededores'>
         <div className='container'>
           <div className='row justify-content-center'>
               <div className={`${style.sectionTitle} text-center pl-40 pr-40 fadeInDown animated`}>

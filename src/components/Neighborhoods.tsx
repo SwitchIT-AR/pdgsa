@@ -50,7 +50,7 @@ const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
     const formated = amenities.map((data) => data.split(' - '));
 
     return (
-        <section id='services' className={`${style.servicesTwo} services-two`}>
+        <section id='Amenidades' className={`${style.servicesTwo} services-two`}>
             <div className='container'>
                 <div className='row justify-content-center'>
                     <div className='col-xl-8 col-lg-10'>

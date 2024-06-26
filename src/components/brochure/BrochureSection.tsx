@@ -7,7 +7,7 @@ import Modal from "../modal/Modal.tsx";
 
 const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='brochure' className='pt-50 pb-120'>
+    <section id='Brochure' className='pt-50 pb-120'>
       <div className='container'>
         <div className='row justify-content-center'>
           <div className='col-lg-6 pt-90'>

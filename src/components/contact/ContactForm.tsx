@@ -41,7 +41,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
 
 
     return (
-        <div id='contact' className="container mb-50">
+        <div id='Contactanos' className="container mb-50">
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-lg-8">
                     <div className={classes.sectionTitle}>
