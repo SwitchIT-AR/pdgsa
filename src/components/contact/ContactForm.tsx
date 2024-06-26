@@ -9,6 +9,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
     const [mail, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [body, setMessage] = useState('');
+    const [invalid, setInvalidate] = useState<boolean>(false)
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
 
@@ -16,6 +17,13 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
         e.preventDefault();
         setSubmitted(false);
         setError(false);
+
+        if (!name || !mail || !phone) {
+            setInvalidate(true);
+            return;
+        } else if (invalid) {
+            setInvalidate(true);
+        }
 
         try {
             const response = await axios.post('https://pdgsa.switchit.com.ar/submit', {
@@ -82,37 +90,42 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                     <form onSubmit={handleSubmit} className="contact-form">
                         <div className="row">
                             <div className="col-lg-12">
-                                <div className="contact-field p-relative c-name mb-40">
+                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                    <label className={classes.label} htmlFor='contactName'>Nombre y Apellido <span>*</span></label>
                                     <input
+                                        id='contactName'
                                         type="text"
-                                        placeholder="Nombre Completo"
+                                        placeholder="Ej. Juan Perez"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className="contact-field p-relative c-mail mb-40">
+                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <label className={classes.label} htmlFor='contactMail'>Correo Electrónico <span>*</span></label>
                                     <input
+                                        id='contactMail'
                                         type="mail"
-                                        placeholder="Correo Electronico"
+                                        placeholder="Ej: juan_perez@email.com"
                                         value={mail}
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className="contact-field p-relative c-mail mb-40">
+                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <label className={classes.label} htmlFor='contactName'>WhatsApp <span>*</span></label>
                                     <input
                                         type="phone"
-                                        placeholder="Whatsapp"
+                                        placeholder="Ej: 50762011500"
                                         value={phone}
                                         onChange={(e) => setPhone(e.target.value)}
                                     />
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className="contact-field p-relative c-body mb-45">
+                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
                                     <textarea
                                         name="body"
                                         id="body"
@@ -124,6 +137,9 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                     ></textarea>
                                 </div>
                                 <p>{data.contactTerms}</p>
+                                <div>
+                                    Los campos Nombre y Apellido, Email y Teléfono son necesarios para continuar con la consulta.
+                                </div>
                                 <div className={classes.centerDivContent}>
                                 <button
                                     type="submit"

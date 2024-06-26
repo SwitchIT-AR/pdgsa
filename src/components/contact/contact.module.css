@@ -34,6 +34,55 @@ section:hover .sectionTitle h2::before {
   width: 100px;
 }
 
+.contactField label span {
+  color: red;
+}
+.contactField input {
+  width: 100%;
+  border: none;
+  background: #fff;
+  padding: 20px 40px;
+  transition: 0.3s;
+  border: 1px solid #dfdfdf;
+}
+.contactField.c-name::after {
+  content: '\f007';
+}
+.contactField::after {
+  position: absolute;
+  font-family: 'Font Awesome 5 Pro';
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  right: 25px;
+  color: #d29751;
+  bottom: 22px;
+}
+.contactField.c-email::after {
+  content: '\f0e0';
+}
+.contactField.c-subject::after {
+  content: '\f249';
+}
+.contactField.c-message::after {
+  content: '\f303';
+  font-weight: 700;
+  top: 20px;
+  bottom: unset;
+}
+.contactField input::placeholder, .contactField textarea::placeholder {
+  color: #9e9e9e;
+}
+.contactField textarea {
+  width: 100%;
+  border: none;
+  background: #fff;
+  padding: 20px 40px;
+  transition: 0.3s;
+  border: 1px solid #dfdfdf;
+  height: 240px;
+}
+
 @media (max-width: 768px) {
   .centerDivContent {
       display: flex;
