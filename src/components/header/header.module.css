@@ -5,6 +5,23 @@
   padding: 10px 0;
 }
 
+.navigationContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+}
+
+.logo a img {
+  width: 100%;
+  height: auto;
+}
+
 .headerInfo{
   display: flex;
   align-items: center;
@@ -23,11 +40,117 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 5px;
+  font-size: 13px;
+}
+
+.headerInfo ul li:hover {
+  text-decoration: underline;
+}
+
+/* Nav Button */
+
+.menu {
+  background-color: black;
+  width: 50px;
+  height: 50px;
+  /* margin: 50px auto; */
+  position: relative;
+  /* cursor: pointer; */
+}
+
+.menu .bar {
+  background-color: #fff;
+  height: 15px;
+  width: 20px;
+/*   border-radius: 5px; */
+  position: absolute;
+  left: 5px;
+}
+
+.menu .bar1 {
+  top: 20px;
+}
+
+.menu .bar2 {
+  top: 50px;
+}
+
+.menu .bar3 {
+  top: 80px;
+}
+
+.active .bar1 {  
+  animation: bar1 0.5s linear;
+  top: 50px;
+  height: 20px;
+  transform: skewY(40deg);
 }
 
 
+
+@keyframes bar1 {
+  0% { top: 20px; height: 15px; transform: skewY(0); }
+  100% { top: 50px; height: 20px; transform: skewY(40deg); }
+}
+
+.active .bar2 {
+  animation: bar2 0.2s linear;
+  opacity: 0;
+}
+
+@keyframes bar2 {
+  0% { opacity: 1; }
+  100% { opacity: 0 }
+}
+
+.active .bar3 {  
+  animation: bar3 0.5s linear;
+  top: 50px;
+  height: 20px;
+  transform: skewY(-40deg);
+}
+
+@keyframes bar3 {
+  0% { top: 80px; height: 15px; transform: skewY(0); }
+  100% { top: 50px; height: 20px; transform: skewY(-40deg); }
+}
+
+/* Close nav button */
+
+.responsivBtn {
+  display: none;
+}
+
+.textLinks {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1366px) {
+  .secondHeader {
+    display: none;
+  }
+
+  .responsivBtn {
+    display: block;
+  }
+
+  .headerInfo {
+    display: none;
+  }
+  .textLinks {
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 1280) {
+  .textLinks {
+    font-size: 0.55rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .textLinks {
+    font-size: 0.8rem;
+  }
   .secondHeader {
     display: none;
   }

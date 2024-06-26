@@ -477,8 +477,10 @@ label {
 .sticky-menu .second-menu::before {
   content: none;
 }
-.second-menu .main-menu ul li {
-  margin-left: 30px;
+.second-menu .main-menu ul {
+  /* margin-left: 30px; */
+  margin: 0;
+  padding: 0;
 }
 .second-menu .main-menu ul li:first-child {
   margin-left: 0;
