@@ -22,7 +22,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
             setInvalidate(true);
             return;
         } else if (invalid) {
-            setInvalidate(true);
+            setInvalidate(false);
         }
 
         try {
@@ -125,7 +125,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                 </div>
                             </div>
                             <div className="col-lg-12">
-                                <div className={`${classes.contactField} p-relative c-name mb-40`}>
+                                <div className={`${classes.contactField} p-relative c-name mb-20`}>
                                     <textarea
                                         name="body"
                                         id="body"
@@ -136,10 +136,13 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                                         onChange={(e) => setMessage(e.target.value)}
                                     ></textarea>
                                 </div>
+                                { invalid &&
+                                    <div style={{ color: 'red', marginBottom: '15px'
+                                    }}>
+                                        Los campos Nombre y Apellido, Email y Teléfono son necesarios para continuar con la consulta.
+                                    </div>
+                                }
                                 <p>{data.contactTerms}</p>
-                                <div>
-                                    Los campos Nombre y Apellido, Email y Teléfono son necesarios para continuar con la consulta.
-                                </div>
                                 <div className={classes.centerDivContent}>
                                 <button
                                     type="submit"
