@@ -26,16 +26,16 @@ const Counter: React.FC<CommonProps> = ({ data }) => {
                 <div className="row">
                     {counterData.map((item, index) => (
                         <div key={index} style={{ display: 'flex', justifyContent: 'center', alignContent: 'center'}} className="col-lg-3 col-sm-6 mb-30 text-center">
-                            <div style={{ width: '120px'}} className={`${classes.singleCounter} wow fadeInUp animated`}
+                            <div className={`${classes.singleCounter} wow fadeInUp animated`}
                                 data-animation="fadeInDown animated" data-delay=".2s">
-                                    <div style={{ width: '80px', height: '80px', backgroundColor: '#d29751', borderRadius: '50%'}}>
+                                    <div style={{ width: '80px', height: '80px', backgroundColor: 'var(--main-color)', borderRadius: '50%'}}>
                                         <FontAwesomeIcon icon={item.icon} />
                                     </div>
 
                                 <div className="counter p-relative">
                                     <span className="count">{item.count}</span>
                                 </div>
-                                <p>{item.label}</p>
+                                <p style={{ fontSize: '20px' }}>{item.label}</p>
                             </div>
                         </div>
                     ))}
