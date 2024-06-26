@@ -54,11 +54,13 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                 <div className="col-lg-4">
                     <div className="contact-info">
                         <div className="single-cta pb-30 mb-30">
+                            <a target="_blank" rel="noopener" href="https://www.google.com/maps/place/Jardines+del+Frances/@8.606561,-82.426911,12z/data=!4m6!3m5!1s0x8fa5919ff3e3698f:0xa64f1082b2edc033!8m2!3d8.6065606!4d-82.426911!16s%2Fg%2F11v9hky864?hl=es-419&entry=ttu" >
                             <div className="f-cta-icon">
                                 <i className="far fa-map"></i>
                             </div>
                             <h5>Ubicacion</h5>
                             <p>{data.contactAddress}</p>
+                            </a>
                         </div>
                         <div className="single-cta pb-30 mb-30">
                             <div className="f-cta-icon">
