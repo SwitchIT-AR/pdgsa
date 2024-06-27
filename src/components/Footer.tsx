@@ -53,7 +53,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                     loading="lazy"
                                     title="Google Maps"
                                 ></iframe>
-                                <a style={{ textAlign: 'center', textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
+                                <a style={{ textAlign: 'center', textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener" href={`${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
                             </div>
                         </div>
                     </div>

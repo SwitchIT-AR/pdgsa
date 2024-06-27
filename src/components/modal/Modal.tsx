@@ -3,7 +3,7 @@ import classes from './modal.module.css';
 import axios from 'axios';
 import { CommonProps } from '../../types/globalTypes';
 
-const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
+const Modal: React.FC<CommonProps> = ({ data }) => {
   const [name, setName] = useState('');
   const [mail, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -131,7 +131,7 @@ const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
                 </div>
               </div>
               <div className='' style={{ borderTop: '0.5px solid #DEE2E6', padding: '8px 10px 8px 10px' }}>
-                  <p style={{ margin: 0, fontSize: '8px', textAlign: 'center', marginBottom: '5px' }}><a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E', }}>Acepto los términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                  <p style={{ margin: 0, fontSize: '8px', textAlign: 'center', marginBottom: '5px' }}><a target="_blank" rel="noopener" href={`${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E', }}>Acepto los términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                   <button
                     type='button'
@@ -151,7 +151,7 @@ const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
                   >
                     Enviar y Descargar  
                   </button>
-                    <a ref={pdfRef} href={`${driveUrl}${data.brochurePdf}`} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
+                    <a ref={pdfRef} href={`${data.brochurePdf}`} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
                   <button ref={modalRef} style={{ display: 'none' }} type='button' data-dismiss='modal' id='hiddenClose'>
                   </button>
                 </div>

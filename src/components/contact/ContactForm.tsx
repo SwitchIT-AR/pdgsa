@@ -4,7 +4,7 @@ import {CommonProps} from "../../types/globalTypes.ts";
 import classes from './contact.module.css';
 
 
-const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
+const ContactForm: React.FC<CommonProps> = ({ data }) => {
     const [name, setName] = useState('');
     const [mail, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -156,7 +156,7 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                         type='checkbox'
                                         onChange={(e) => {setTermns(e.target.checked)}}
                                     />
-                                    <p>Acepto los <a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E' }}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                                    <p>Acepto los <a target="_blank" rel="noopener" href={`${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E' }}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
                                 </div>
                                 <button
                                     type="submit"
