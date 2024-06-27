@@ -139,6 +139,20 @@ app.get('/drive/file/:fileId', async (req, res) => {
     }
 });
 
+app.get('/pull', (req, res) => {
+    const repositoryPath = '../'; // Update the path to your repository here
+
+
+    exec(`cd ${repositoryPath} && git pull`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return res.status(500).send(`Error: ${stderr}`);
+        }
+        res.send(`Output: ${stdout}`);
+    });
+});
+
+
 app.get('/:sheetName', async (req, res) => {
     const { sheetName } = req.params;
     try {
@@ -158,18 +172,7 @@ app.get('/:sheetName', async (req, res) => {
 });
 
 // New GET endpoint to pull the latest commits from the repository
-app.get('/pull', (req, res) => {
-    const repositoryPath = '../'; // Update the path to your repository here
 
-
-    exec(`cd ${repositoryPath} && git pull`, (error, stdout, stderr) => {
-        if (error) {
-            console.error(`exec error: ${error}`);
-            return res.status(500).send(`Error: ${stderr}`);
-        }
-        res.send(`Output: ${stdout}`);
-    });
-});
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
