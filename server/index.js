@@ -2,25 +2,30 @@ import express from 'express';
 import { google } from 'googleapis';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import morgan from 'morgan';
+import { exec } from 'child_process';
 
 const app = express();
-const port = 8088;
+const port = 5001;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(morgan('dev')); // Add morgan middleware for logging
 
-const sheets = google.sheets('v4');
 const auth = new google.auth.GoogleAuth({
-    keyFile: './pdgsa-webs-clientes-c4185f428021.json', // Update the path here
-    scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+    keyFile: './new-webs-424720-cdbde6a8070d.json', // Update the path here
+    scopes: [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive'
+    ],
 });
 
+const sheets = google.sheets({ version: 'v4', auth });
+const drive = google.drive({ version: 'v3', auth });
+
 const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
+const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 
 app.post('/submit', async (req, res) => {
-    const { name, mail, body, phone } = req.body;
+    const { name, mail, body } = req.body;
     const timestamp = new Date().toLocaleString();
     const project = req.headers.referer || 'unknown';
     try {
@@ -31,7 +36,7 @@ app.post('/submit', async (req, res) => {
             valueInputOption: 'RAW',
             insertDataOption: 'INSERT_ROWS',
             resource: {
-                values: [[name, mail,phone, body, timestamp, project]],
+                values: [[name, mail, body, timestamp, project]],
             },
             auth: client,
         };
@@ -69,13 +74,12 @@ const transformData = (data) => {
     return transformedData;
 };
 
-app.get('/:sheetName', async (req, res) => {
-    const { sheetName } = req.params;
+app.get('/landing', async (req, res) => {
     try {
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
-            range: `${sheetName}!A1:B320`, // Use the sheetName from the route parameter
+            range: 'JDF!A1:Z1000', // Adjust the range as needed
             auth: client,
         };
         const response = await sheets.spreadsheets.values.get(request);
@@ -85,6 +89,64 @@ app.get('/:sheetName', async (req, res) => {
         console.error('Error reading from Google Sheets:', error);
         res.status(500).send('Error reading from Google Sheets.');
     }
+});
+
+// Function to list files in a Google Drive folder
+const listFilesInFolder = async (folderId) => {
+    const client = await auth.getClient();
+    const res = await drive.files.list({
+        q: `'${folderId}' in parents and trashed = false`,
+        fields: 'files(id, name, mimeType)',
+        auth: client,
+    });
+    return res.data.files;
+};
+
+// Endpoint to get the list of files in the specified folder
+app.get('/drive/files', async (req, res) => {
+    try {
+        const files = await listFilesInFolder(folderId);
+        res.status(200).send(files);
+    } catch (error) {
+        console.error('Error listing files from Google Drive:', error);
+        res.status(500).send('Error listing files from Google Drive.');
+    }
+});
+
+// Function to get the file metadata
+const getFileMetadata = async (fileId) => {
+    const client = await auth.getClient();
+    const res = await drive.files.get({
+        fileId,
+        fields: 'id, name, mimeType, webViewLink, webContentLink',
+        auth: client,
+    });
+    return res.data;
+};
+
+// Endpoint to get metadata of a specific file
+app.get('/drive/file/:fileId', async (req, res) => {
+    const { fileId } = req.params;
+    try {
+        const metadata = await getFileMetadata(fileId);
+        res.status(200).send(metadata);
+    } catch (error) {
+        console.error('Error getting file metadata from Google Drive:', error);
+        res.status(500).send('Error getting file metadata from Google Drive.');
+    }
+});
+
+// New GET endpoint to pull the latest commits from the repository
+app.get('/pull', (req, res) => {
+    const repositoryPath = '/Users/meckhardt/Documents/Desarrollos/PDGSA/JDF'; // Update the path to your repository here
+
+    exec(`cd ${repositoryPath} && git pull`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return res.status(500).send(`Error: ${stderr}`);
+        }
+        res.send(`Output: ${stdout}`);
+    });
 });
 
 app.listen(port, () => {
