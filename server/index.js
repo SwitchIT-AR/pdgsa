@@ -138,7 +138,8 @@ app.get('/drive/file/:fileId', async (req, res) => {
 
 // New GET endpoint to pull the latest commits from the repository
 app.get('/pull', (req, res) => {
-    const repositoryPath = '/Users/meckhardt/Documents/Desarrollos/PDGSA/JDF'; // Update the path to your repository here
+    const repositoryPath = '../'; // Update the path to your repository here
+
 
     exec(`cd ${repositoryPath} && git pull`, (error, stdout, stderr) => {
         if (error) {
