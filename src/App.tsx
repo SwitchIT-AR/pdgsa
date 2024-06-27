@@ -23,6 +23,7 @@ import WhatsappButton from './components/WhatsappButton.tsx';
 // import classes from './components/General.module.css';
 import './components/styles/globalVariables.css';
 import LoadingPage from './components/loading/LoadingPage.tsx';
+import { Modal } from 'react-bootstrap';
 
 const driveUrl = "https://lh3.googleusercontent.com/d/";
 
@@ -64,15 +65,12 @@ const App: React.FC = () => {
         )
     }
 
-    if (!data) {
+    if (!data || error) {
         return <div>Error loading data</div>;
     }
 
-    console.log('error:', error);
-    console.log('loading', loading);
-    console.log('data', data);
     return (
-        <div style={{ position: 'relative'}}>
+        <div>
             <WhatsappButton data={data} driveUrl={driveUrl} />
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl} />

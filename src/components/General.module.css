@@ -104,16 +104,15 @@ section:hover .sectionTitle span::before{width: 100px;}
 	height: 80px;
 	background:#d29751; */
 	border-radius: 50%;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 	color:#fff;
 	font-size: 40px;
 	line-height: 80px;
 }
 
 .gmap {
-    border: 0;
-    width: 400px;
-    height: 400px;
+    max-width: 500px;
+    margin-bottom: 20px;
 }
 
 .centerDivContent {
