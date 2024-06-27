@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const auth = new google.auth.GoogleAuth({
-    keyFile: './new-webs-424720-cdbde6a8070d.json', // Update the path here
+    keyFile: '../staging-switchit.json', // Update the path here
     scopes: [
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive'
@@ -21,7 +21,10 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 const drive = google.drive({ version: 'v3', auth });
 
-const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
+const spreadsheetId = '1DavlnUiV9q1M8IwwXhvHmp-kKXWeYAWxPOOFVI75HWc'
+
+//const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
+
 const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 
 app.post('/submit', async (req, res) => {
@@ -133,6 +136,24 @@ app.get('/drive/file/:fileId', async (req, res) => {
     } catch (error) {
         console.error('Error getting file metadata from Google Drive:', error);
         res.status(500).send('Error getting file metadata from Google Drive.');
+    }
+});
+
+app.get('/:sheetName', async (req, res) => {
+    const { sheetName } = req.params;
+    try {
+        const client = await auth.getClient();
+        const request = {
+            spreadsheetId,
+            range: `${sheetName}!A1:B320`, // Use the sheetName from the route parameter
+            auth: client,
+    };
+        const response = await sheets.spreadsheets.values.get(request);
+        const transformedData = transformData(response.data.values);
+        res.status(200).send(transformedData);
+    } catch (error) {
+        console.error('Error reading from Google Sheets:', error);
+        res.status(500).send('Error reading from Google Sheets.');
     }
 });
 
