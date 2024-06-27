@@ -1,6 +1,7 @@
 import style from './houseModel.module.css';
 import React from "react";
 import {CommonProps} from "../../types/globalTypes.ts";
+import ImageZoom from '../imgZoom/ImageZoom.tsx';
 
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
@@ -19,22 +20,24 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
             </div>
             <div className={style.imgGroup}>
               <div className={style.imgContainer}>
-                <a href={`${driveUrl}${data.modelHomeImage2}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer">  
-                  <img
+                {/* <a href={`${driveUrl}${data.modelHomeImage2}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer"> */}
+                  <ImageZoom src={`${driveUrl}${data.modelHomeImage2}`} alt='model home2' />
+                  {/* <img
                     src={`${driveUrl}${data.modelHomeImage2}`}
                     className={style.imgResponsive}
                     alt='model home2'
-                  />
-                </a>
+                  /> */}
+                {/* </a> */}
               </div>
               <div className={style.imgContainer}>
-              <a href={`${driveUrl}${data.modelHomeImage1}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer">
-                  <img
+              {/* <a href={`${driveUrl}${data.modelHomeImage1}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer"> */}
+              <ImageZoom src={`${driveUrl}${data.modelHomeImage1}`} alt='model home1' />
+                  {/* <img
                     src={`${driveUrl}${data.modelHomeImage1}`}
                     className={style.imgResponsive}
                     alt='model home1'
-                  />
-              </a>
+                  /> */}
+              {/* </a> */}
               </div>
             </div>
           </div>

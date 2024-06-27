@@ -31,6 +31,7 @@ body {
   font-weight: normal;
   color: #687068;
   font-style: normal;
+  /* overflow-x: hidden; */
 }
 .img {
   max-width: 100%;
