@@ -35,7 +35,7 @@ const Counter: React.FC<CommonProps> = ({ data }) => {
                                 <div className="counter p-relative">
                                     <span className="count">{item.count}</span>
                                 </div>
-                                <p style={{ fontSize: '20px' }}>{item.label}</p>
+                                <p style={{ fontSize: '20px', margin: '0' }}>{item.label}</p>
                             </div>
                         </div>
                     ))}
