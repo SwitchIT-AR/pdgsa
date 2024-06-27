@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import classes from './modal.module.css';
 import axios from 'axios';
-import pdf from '../../assets/Brochure-JDF.pdf';
+import { CommonProps } from '../../types/globalTypes';
 
-const Modal = () => {
+const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
   const [name, setName] = useState('');
   const [mail, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  // const [setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const [validation, setValidation] = useState<boolean>(false);
   const modalRef = useRef<HTMLButtonElement>(null);
@@ -15,7 +15,7 @@ const Modal = () => {
 
   const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setSubmitted(false);
+    // setSubmitted(false);
     setError(false);
 
     
@@ -37,7 +37,7 @@ const Modal = () => {
       );
 
       if (response.status === 200) {
-        setSubmitted(true);
+        // setSubmitted(true);
         setName('');
         setEmail('');
         setPhone('');
@@ -91,7 +91,7 @@ const Modal = () => {
                       <div style={{ fontSize: '12px', color: 'red', marginBottom: '10px'}}>Ah ocurrido un error, por favor intentelo nuevamente.</div>
                   }
                 <div className='mb-1'>
-                  <label htmlFor='name'>Nombre y Apellido</label>
+                  <label htmlFor='name'>Nombre y Apellido <span style={{ color: 'red' }}>*</span></label>
                   <input
                     className='form-control'
                     id='name'
@@ -107,7 +107,7 @@ const Modal = () => {
                   } */}
                 </div>
                 <div className='mb-1'>
-                  <label htmlFor='email'>Correo Electrónico</label>
+                  <label htmlFor='email'>Correo Electrónico <span style={{ color: 'red' }}>*</span></label>
                   <input
                     type='email'
                     className='form-control'
@@ -120,7 +120,7 @@ const Modal = () => {
                   />
                 </div>
                 <div className='mb-1'>
-                  <label htmlFor='phone'>Teléfono</label>
+                  <label htmlFor='phone'>Teléfono <span style={{ color: 'red' }}>*</span></label>
                   <input
                     type='number'
                     className='form-control'
@@ -153,7 +153,7 @@ const Modal = () => {
                 >
                   Enviar y Descargar  
                 </button>
-                  <a ref={pdfRef} href={pdf} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
+                  <a ref={pdfRef} href={`${driveUrl}${data.brochurePdf}`} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
                 <button ref={modalRef} style={{ display: 'none' }} type='button' data-dismiss='modal' id='hiddenClose'>
                 </button>
               </div>

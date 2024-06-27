@@ -10,14 +10,13 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
     <section id='Brochure' className='pt-50 pb-50'>
       <div className='container'>
         <div className='row justify-content-center'>
-          <div className='col-lg-6'>
+          <div className='col-lg-6 mb-20'>
             <div className='about-content pl-lg-50'>
               <div className={`${classes.centerTitle}`}>
                 <h2>{data.brochureTitle}</h2>
               </div>
-
+              <Modal data={data} driveUrl={driveUrl} />
               <div className={classes.centerDivContent}>
-                <Modal />
               <a
                 href='#'
                 style={{
