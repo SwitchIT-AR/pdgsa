@@ -8,6 +8,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
     const itemsArray = data.navbarItems ? data.navbarItems.split(', ') : [];
     const linksArray = data.navbarLinks ? data.navbarLinks.split(', ') : [];
+    const phoneNumber = data.whatsappNumber || '573002222222';
 
   // Validate arrays length
     const areArraysValid = itemsArray.length === linksArray.length;
@@ -53,12 +54,16 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         <div style={{fontSize:'0.8rem'}} className={classes.headerInfo}>
                             <ul>
                                 <li>
-                                <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '1.3rem' }} icon={`fa-brands fa-whatsapp` as IconProp} />
-                                    <span>{data.headerPhone}</span>
+                                    <a style={{ textDecoration: 'none', color: 'black' }} href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
+                                        <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '1.3rem' }} icon={`fa-brands fa-whatsapp` as IconProp} />
+                                        <span>{data.headerPhone}</span>
+                                    </a>
                                 </li>
                                 <li>
-                                    <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-mail-bulk"></i>
-                                    <span>{data.headerEmail}</span>
+                                    <a style={{ textDecoration: 'none', color: 'black' }} href={`mailto:${data.headerEmail}`} target="_blank" rel="noopener noreferrer">
+                                        <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-mail-bulk"></i>
+                                        <span>{data.headerEmail}</span>
+                                    </a>
                                 </li>
                                 <li>
                                     <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-clock"></i>
