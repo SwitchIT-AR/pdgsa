@@ -2,6 +2,7 @@ import express from 'express';
 import { google } from 'googleapis';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import { exec } from 'child_process';
 
 const app = express();
 const port = 5001;
@@ -133,6 +134,19 @@ app.get('/drive/file/:fileId', async (req, res) => {
         console.error('Error getting file metadata from Google Drive:', error);
         res.status(500).send('Error getting file metadata from Google Drive.');
     }
+});
+
+// New GET endpoint to pull the latest commits from the repository
+app.get('/pull', (req, res) => {
+    const repositoryPath = '/Users/meckhardt/Documents/Desarrollos/PDGSA/JDF'; // Update the path to your repository here
+
+    exec(`cd ${repositoryPath} && git pull`, (error, stdout, stderr) => {
+        if (error) {
+            console.error(`exec error: ${error}`);
+            return res.status(500).send(`Error: ${stderr}`);
+        }
+        res.send(`Output: ${stdout}`);
+    });
 });
 
 app.listen(port, () => {
