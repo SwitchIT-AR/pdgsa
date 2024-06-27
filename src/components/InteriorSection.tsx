@@ -9,12 +9,14 @@ const InteriorCard = (props: { title: string; image: string }) => {
   return (
     <div className="col-lg-6 col-md-4">
                     <div className="shadow-sm single-post mb-30 wow fadeInUp animated" data-animation="fadeInDown animated" data-delay=".2s">
-                        <div className="blog-thumb  p-2 ">
-                          <img src={props.image} alt="img" />
-                        </div>
-                        <div style={{ paddingBottom: '5px' }}>
-                            <h4 style={{ textAlign: 'center'}}>{props.title}</h4>
-                        </div>
+                    <a style={{ textDecoration: 'none', color: 'black' }} href={`${props.image}`}  target="_blank" rel="noopener noreferrer">
+                          <div className="blog-thumb  p-2 ">
+                            <img src={props.image} alt="img" />
+                          </div>
+                          <div style={{ paddingBottom: '5px' }}>
+                              <h4 style={{ textAlign: 'center'}}>{props.title}</h4>
+                          </div>
+                    </a>
                     </div>
                 </div>
   )
@@ -34,6 +36,7 @@ const InteriorSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               </span>
             </div>
             <div className='row'>
+              
               <InteriorCard title={data.interiorCard1} image={`${driveUrl}${data.interiorCard1Image}`} />
               <InteriorCard title={data.InteriorCard2} image={`${driveUrl}${data.interiorCard2Image}`} />
               <InteriorCard title={data.interiorCard3} image={`${driveUrl}${data.interiorCard3Image}`} />

@@ -19,18 +19,22 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
             </div>
             <div className={style.imgGroup}>
               <div className={style.imgContainer}>
-                <img
-                  src={`${driveUrl}${data.modelHomeImage2}`}
-                  className={style.imgResponsive}
-                  alt='model home2'
-                />
+                <a href={`${driveUrl}${data.modelHomeImage2}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer">  
+                  <img
+                    src={`${driveUrl}${data.modelHomeImage2}`}
+                    className={style.imgResponsive}
+                    alt='model home2'
+                  />
+                </a>
               </div>
               <div className={style.imgContainer}>
-                <img
-                  src={`${driveUrl}${data.modelHomeImage1}`}
-                  className={style.imgResponsive}
-                  alt='model home1'
-                />
+              <a href={`${driveUrl}${data.modelHomeImage1}`} style={{ textDecoration: 'none', color: 'black' }} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={`${driveUrl}${data.modelHomeImage1}`}
+                    className={style.imgResponsive}
+                    alt='model home1'
+                  />
+              </a>
               </div>
             </div>
           </div>

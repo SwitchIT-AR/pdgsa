@@ -23,7 +23,6 @@ import WhatsappButton from './components/WhatsappButton.tsx';
 // import classes from './components/General.module.css';
 import './components/styles/globalVariables.css';
 import LoadingPage from './components/loading/LoadingPage.tsx';
-import { Modal } from 'react-bootstrap';
 
 const driveUrl = "https://lh3.googleusercontent.com/d/";
 
