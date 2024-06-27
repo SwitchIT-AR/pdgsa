@@ -7,11 +7,11 @@ import Modal from "../modal/Modal.tsx";
 
 const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='Brochure' className='pt-50 pb-50'>
+    <section id='Brochure' className={`${classes.brochureSection} pt-50 pb-50`}>
       <div className='container'>
-        <div className='row justify-content-center'>
-          <div className='col-lg-6 mb-20'>
-            <div className='about-content pl-lg-50'>
+        <div className={classes.contentContainer}>
+          <div className=''>
+            <div className={`${classes.dataContainer} about-content pl-lg-50`}>
               <div className={`${classes.centerTitle}`}>
                 <h2>{data.brochureTitle}</h2>
               </div>
@@ -37,12 +37,14 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
 
           </div>
           <div className='col-lg-5'>
-            <div style={{ objectFit: 'cover', maxWidth: '350px' }}>
-              <img
-                src={`${driveUrl}${data.brochureImage}`}
-                style={{ width: '100%', height: 'auto' }}
-                alt='img'
-              />
+            <div className={classes.imgContainer}>
+              <a href="#" data-toggle="modal" data-target="#brochureModal">
+                <img
+                  src={`${driveUrl}${data.brochureImage}`}
+                  style={{ width: '100%', height: 'auto' }}
+                  alt='img'
+                />
+              </a>
             </div>
           </div>
         </div>

@@ -101,10 +101,6 @@ const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
                     value={name}
                     required
                   />
-                  {/* {
-                    validation && 
-                  <div className=''>Por favor, completar con Nombre y Apellido.</div>
-                  } */}
                 </div>
                 <div className='mb-1'>
                   <label htmlFor='email'>Correo Electrónico <span style={{ color: 'red' }}>*</span></label>
@@ -134,28 +130,31 @@ const Modal: React.FC<CommonProps> = ({ data, driveUrl }) => {
                   
                 </div>
               </div>
-              <div className='modal-footer'>
-                <button
-                  type='button'
-                  className='btn btn-secondary'
-                  data-dismiss='modal'
-                  onClick={() => setValidation(false)}
-                >
-                  Cerrar
-                </button>
-                <button
-                  id='button-modal'
-                  type='submit'
-                  // data-dismiss='modal'
-                  className='btn'
-                  style={{ backgroundColor: 'var(--main-color)', color: 'white' }}
-                  onClick={(e) => handleSubmit(e)}
-                >
-                  Enviar y Descargar  
-                </button>
-                  <a ref={pdfRef} href={`${driveUrl}${data.brochurePdf}`} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
-                <button ref={modalRef} style={{ display: 'none' }} type='button' data-dismiss='modal' id='hiddenClose'>
-                </button>
+              <div className='' style={{ borderTop: '0.5px solid #DEE2E6', padding: '8px 10px 8px 10px' }}>
+                  <p style={{ margin: 0, fontSize: '8px', textAlign: 'center', marginBottom: '5px' }}><a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E', }}>Acepto los términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                  <button
+                    type='button'
+                    className='btn btn-secondary'
+                    data-dismiss='modal'
+                    onClick={() => setValidation(false)}
+                  >
+                    Cerrar
+                  </button>
+                  <button
+                    id='button-modal'
+                    type='submit'
+                    // data-dismiss='modal'
+                    className='btn'
+                    style={{ backgroundColor: 'var(--main-color)', color: 'white' }}
+                    onClick={(e) => handleSubmit(e)}
+                  >
+                    Enviar y Descargar  
+                  </button>
+                    <a ref={pdfRef} href={`${driveUrl}${data.brochurePdf}`} target="_blank" rel="noopener noreferrer" download style={{ display: 'none' }} />
+                  <button ref={modalRef} style={{ display: 'none' }} type='button' data-dismiss='modal' id='hiddenClose'>
+                  </button>
+                </div>
               </div>
             </form>
           </div>
