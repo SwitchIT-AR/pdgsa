@@ -83,6 +83,25 @@ section:hover .sectionTitle h2::before {
   height: 240px;
 }
 
+.centerDivContent {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.checkboxContainer {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.checkboxContainer p {
+  margin: 0;
+  font-size: 10px;
+}
+
 @media (max-width: 768px) {
   .centerDivContent {
       display: flex;
@@ -90,5 +109,14 @@ section:hover .sectionTitle h2::before {
       justify-content: center;
       align-items: center;
       text-align: center;
+  }
+
+  .checkboxContainer {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
+  .checkboxContainer p {
+    font-size: 8px;
   }
 }

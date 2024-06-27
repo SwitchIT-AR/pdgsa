@@ -143,14 +143,6 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                         Los campos Nombre y Apellido, Email y Teléfono son necesarios para continuar con la consulta.
                                     </div>
                                 }
-                                <div style={{ display: 'flex', gap: '7px', alignItems: 'center', marginBottom: '15px' }}>
-                                    <input
-                                        style={{ }}
-                                        type='checkbox'
-                                        onChange={(e) => {setTermns(e.target.checked)}}
-                                    />
-                                    <p style={{ margin: 0 }}>Acepto los <a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E' }}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
-                                </div>
                                 { (invalid && !termns) &&
                                     <div style={{ color: 'red', marginBottom: '15px', fontSize: '10px'
                                     }}>
@@ -158,6 +150,14 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                     </div>
                                 }
                                 <div className={classes.centerDivContent}>
+                                <div className={classes.checkboxContainer} style={{  }}>
+                                    <input
+                                        style={{ }}
+                                        type='checkbox'
+                                        onChange={(e) => {setTermns(e.target.checked)}}
+                                    />
+                                    <p>Acepto los <a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E' }}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                                </div>
                                 <button
                                     type="submit"
                                     className="btn"
