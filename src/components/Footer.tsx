@@ -31,10 +31,10 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 <div className="f-widget-title">
                                     <h5>LA WEB</h5>
                                 </div>
-                                <div className="footer-link">
+                                <div className="">
                                     <ul style={{ margin: '0', padding: '0'}}>
                                         {footerItems.map((item, index) => (
-                                            <li key={index}><a href={footerLinks[index].trim()}>{item.trim()}</a></li>
+                                            <li style={{ marginBottom: '12px' }} key={index}><a style={{ color: 'white', textDecoration: 'none' }} href={footerLinks[index].trim()}>{item.trim()}</a></li>
                                         ))}
                                     </ul>
                                 </div>
@@ -42,11 +42,9 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         </div>
                         <div className="col-xl-5 col-lg-5 col-sm-6">
                             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                <a style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', textAlign: 'center', gap: '5px', marginBottom: '30px' }} target="_blank" rel="noopener" href="https://www.google.com/maps/place/Jardines+del+Frances/@8.606561,-82.426911,12z/data=!4m6!3m5!1s0x8fa5919ff3e3698f:0xa64f1082b2edc033!8m2!3d8.6065606!4d-82.426911!16s%2Fg%2F11v9hky864?hl=es-419&entry=ttu" >
-                                    {/* <div style={{ display: 'flex', gap: '10px', alignItems: 'baseline',  }}> */}
-                                        <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '50px' }} icon={"fa-solid fa-location-dot" as IconProp} />
-                                        <p style={{ margin: 0, padding: 0, fontSize: '30px', fontWeight: '600', letterSpacing: '4px', color: 'white', textDecoration: 'underline' }}>Ven a conocernos!</p>
-                                    {/* </div> */}
+                                <a style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '10px', marginBottom: '30px' }} target="_blank" rel="noopener" href="https://www.google.com/maps/place/Jardines+del+Frances/@8.606561,-82.426911,12z/data=!4m6!3m5!1s0x8fa5919ff3e3698f:0xa64f1082b2edc033!8m2!3d8.6065606!4d-82.426911!16s%2Fg%2F11v9hky864?hl=es-419&entry=ttu" >
+                                        <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '25px' }} icon={"fa-solid fa-location-dot" as IconProp} />
+                                        <p style={{ margin: 0, padding: 0, fontSize: '20px', fontWeight: '400', letterSpacing: '1px', color: 'white' }}>Ven a conocernos!</p>
                                 </a>
                                 <iframe
                                     src={data.gmapsLink}
@@ -55,7 +53,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                     loading="lazy"
                                     title="Google Maps"
                                 ></iframe>
-                                <a style={{ textAlign: 'center' }} target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
+                                <a style={{ textAlign: 'center', textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
                             </div>
                         </div>
                     </div>

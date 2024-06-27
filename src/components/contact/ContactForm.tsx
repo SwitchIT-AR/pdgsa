@@ -50,7 +50,7 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
 
 
     return (
-        <div id='Contactanos' className="container mb-50">
+        <div className="container mb-50">
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-lg-8">
                     <div className={classes.sectionTitle}>
@@ -92,7 +92,7 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className={`${classes.contactField} p-relative c-name mb-20`}>
-                                    <label className={classes.label} htmlFor='contactName'>Nombre y Apellido <span>*</span></label>
+                                    <label id='Contactanos' className={classes.label} htmlFor='contactName'>Nombre y Apellido <span>*</span></label>
                                     <input
                                         id='contactName'
                                         type="text"
@@ -149,7 +149,7 @@ const ContactForm: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                         type='checkbox'
                                         onChange={(e) => {setTermns(e.target.checked)}}
                                     />
-                                    <p style={{ margin: 0 }}>Acepto los <a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
+                                    <p style={{ margin: 0 }}>Acepto los <a target="_blank" rel="noopener" href={`${driveUrl}${data.contactTerms}`} style={{ textDecoration: 'none', color: '#6E6E6E' }}>términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a></p>
                                 </div>
                                 { (invalid && !termns) &&
                                     <div style={{ color: 'red', marginBottom: '15px', fontSize: '10px'

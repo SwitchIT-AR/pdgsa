@@ -13,7 +13,7 @@
 }
 
 .logo {
-  width: 200px;
+  width: 300px;
   height: auto;
 }
 
@@ -55,91 +55,37 @@
   text-decoration: underline;
 }
 
-/* Nav Button */
-
-.menu {
-  background-color: black;
-  width: 50px;
-  height: 50px;
-  /* margin: 50px auto; */
-  position: relative;
-  /* cursor: pointer; */
-}
-
-.menu .bar {
-  background-color: #fff;
-  height: 15px;
-  width: 20px;
-/*   border-radius: 5px; */
-  position: absolute;
-  left: 5px;
-}
-
-.menu .bar1 {
-  top: 20px;
-}
-
-.menu .bar2 {
-  top: 50px;
-}
-
-.menu .bar3 {
-  top: 80px;
-}
-
-.active .bar1 {  
-  animation: bar1 0.5s linear;
-  top: 50px;
-  height: 20px;
-  transform: skewY(40deg);
-}
-
-
-
-@keyframes bar1 {
-  0% { top: 20px; height: 15px; transform: skewY(0); }
-  100% { top: 50px; height: 20px; transform: skewY(40deg); }
-}
-
-.active .bar2 {
-  animation: bar2 0.2s linear;
-  opacity: 0;
-}
-
-@keyframes bar2 {
-  0% { opacity: 1; }
-  100% { opacity: 0 }
-}
-
-.active .bar3 {  
-  animation: bar3 0.5s linear;
-  top: 50px;
-  height: 20px;
-  transform: skewY(-40deg);
-}
-
-@keyframes bar3 {
-  0% { top: 80px; height: 15px; transform: skewY(0); }
-  100% { top: 50px; height: 20px; transform: skewY(-40deg); }
-}
-
-/* Close nav button */
-
 .responsivBtn {
   display: none;
 }
 
-.textLinks {
-  font-size: 0.7rem;
+.bars {
+  font-size: 2rem;
 }
 
-/* @media (min-width: 1367px) {
-  .textLinks {
-    font-size: 0.7rem;
-  }
-} */
+.nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+}
 
-@media (max-width: 768px) {
+.nav ul li a {
+  color: black;
+}
+
+.nav ul li a:hover {
+  font-weight: 800;
+}
+
+.headerContainer {
+  position: relative;
+}
+
+@media (max-width: 1200px) {
   .secondHeader {
     display: none;
   }
@@ -151,25 +97,21 @@
   .headerInfo {
     display: none;
   }
+
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 999;
+    background-color: red;
+    width: 100%;
+    top: -100vh;
+    left: 0;
+    height: 100vh;
+  }
+
+  .open ul {
+    top: 10vh;
+  }
 }
 
-@media (min-width: 1366px) {
-  
-  .textLinks {
-    font-size: 0.8rem;
-  }
-}
-@media (min-width: 1280) {
-  .textLinks {
-    font-size: 0.4rem;
-  }
-}
-
-/* @media (max-width: 768px) {
-  .textLinks {
-    font-size: 0.8rem;
-  }
-  .secondHeader {
-    display: none;
-  }
-} */
