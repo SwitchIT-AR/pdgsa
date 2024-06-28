@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const auth = new google.auth.GoogleAuth({
-    keyFile: '../staging-switchit.json', // Update the path here
+    keyFile: '../production.json', // Update the path here
     scopes: [
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive'
@@ -21,9 +21,9 @@ const auth = new google.auth.GoogleAuth({
 const sheets = google.sheets({ version: 'v4', auth });
 const drive = google.drive({ version: 'v3', auth });
 
-const spreadsheetId = '1DavlnUiV9q1M8IwwXhvHmp-kKXWeYAWxPOOFVI75HWc'
+//const spreadsheetId = '1DavlnUiV9q1M8IwwXhvHmp-kKXWeYAWxPOOFVI75HWc'
 
-//const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
+const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
 
 const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 

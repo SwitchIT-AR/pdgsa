@@ -44,7 +44,7 @@ const SpecsSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
             <div className='row'>
               {
                 formatedList.map((data, index) => (
-                  <SpecCard index={index} title={data[1]} icon={data[0]} color={color} driveUrl={driveUrl} />
+                  <SpecCard key={index} index={index} title={data[1]} icon={data[0]} color={color} driveUrl={driveUrl} />
                 ))
               }
               </div>

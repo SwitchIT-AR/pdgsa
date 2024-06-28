@@ -19,6 +19,7 @@ import SocialMedia from './components/SocialMedia';
 import BrochureSection from './components/brochure/BrochureSection.tsx';
 import { Data } from './types/globalTypes';
 import WhatsappButton from './components/WhatsappButton.tsx';
+import 'animate.css';
 
 // import classes from './components/General.module.css';
 import './components/styles/globalVariables.css';
