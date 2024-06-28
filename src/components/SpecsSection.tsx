@@ -1,6 +1,4 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './General.module.css';
-// import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { CommonProps } from '../types/globalTypes';
 
 const SpecCard = (props: { index: number; title: string; icon: string, color: string, driveUrl: string }) => {
@@ -15,8 +13,8 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
         <div className={style.imgContainer}>
           <img style={{ width: '100%', height: 'auto' }} src={`${props.driveUrl}${props.icon}`} alt="" />
         </div>
-        <div className='second-services-content2'>
-          <h5 style={{ fontSize: '14px' }}>{props.title}</h5>
+        <div className=''>
+          <p style={{ fontSize: '16px', margin: '0', color: 'black' }}>{props.title}</p>
         </div>
       </div>
     </div>
@@ -31,7 +29,6 @@ const SpecsSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section id='Caracteristicas' className='services-area'>
       <div className='container'>
-        {}
         <div className='row justify-content-center'>
           <div className='col-xl-8 col-lg-10'>
             <div
