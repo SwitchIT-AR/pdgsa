@@ -148,7 +148,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                 </div>
             </div>
 
-            <div className={classes.responsiveNav}>
+            <div className={`${classes.responsiveNav} shadow`}>
             <div className="" style={{backgroundColor: data.headerBackground}}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px' }} className="pt-4 pb-4">
                             <div className={classes.logo}>
