@@ -3,8 +3,8 @@
 }
 
 .centerTitle h2{
-  font-size: 25px;
-  margin-bottom: 60px;
+  font-size: 22px;
+  margin-bottom: 30px;
 }
 
 .centerDivContent {
@@ -15,6 +15,7 @@
 
 .contentContainer {
   display: flex;
+  flex-direction: column;
 }
 
 .imgContaner {
