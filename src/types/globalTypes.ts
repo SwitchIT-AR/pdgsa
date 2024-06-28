@@ -100,6 +100,10 @@ export interface Data {
     socialMediaIcons: string;
     socialMediaLinks: string;
     whatsappNumber: string;
+    interiorCardId1: string;
+    interiorCardId2: string;
+    interiorCardId3: string;
+    interiorCardId4: string;
 }
 
 export interface CommonProps {
