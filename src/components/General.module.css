@@ -127,6 +127,16 @@ section:hover .sectionTitle span::before{width: 100px;}
     margin-left: 10px;
 }
 
+.footerWeb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footerWeb .footerUlContainer {
+    padding-left: 50px;
+}
+
 @media (max-width: 768px) {
     .centerDivContent {
         display: flex;
@@ -167,5 +177,13 @@ section:hover .sectionTitle span::before{width: 100px;}
     .gmap {
         width: 100%;
         height: auto;
+    }
+
+    .footerWeb {
+        align-items: flex-start;
+    }
+
+    .footerWeb .footerUlContainer {
+        padding-left: 0;
     }
 }

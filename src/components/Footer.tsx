@@ -27,11 +27,11 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             </div>
                         </div>
                         <div className="col-xl-3 col-lg-3 col-sm-6">
-                            <div className="footer-widget mb-30 d-flex flex-column justify-content-center pl-100">
+                            <div className={`${classes.footerWeb} footer-widget mb-30`}>
                                 <div className="f-widget-title">
                                     <h5>LA WEB</h5>
                                 </div>
-                                <div className="">
+                                <div className={classes.footerUlContainer}>
                                     <ul style={{ margin: '0', padding: '0'}}>
                                         {footerItems.map((item, index) => (
                                             <li style={{ marginBottom: '12px' }} key={index}><a style={{ color: 'white', textDecoration: 'none' }} href={footerLinks[index].trim()}>{item.trim()}</a></li>
