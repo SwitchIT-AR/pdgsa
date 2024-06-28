@@ -43,8 +43,9 @@
   }
 
   .contentContainer {
-    flex-direction: column-reverse;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 25px;
   }
 
   .imgContainer {
