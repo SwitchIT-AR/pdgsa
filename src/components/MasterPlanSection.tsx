@@ -1,6 +1,7 @@
 import style from './General.module.css';
 import React from "react";
 import {CommonProps} from "../types/globalTypes.ts";
+import ModalImage from './modalImage/ModalImage.tsx';
 
 const MasterPlanSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
@@ -11,7 +12,8 @@ const MasterPlanSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               <div className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80 fadeInDown animated`}>
                 <span style={{color: `var(--main-color)`}}>{data.masterplanTitle}</span>
               </div>
-              <div>
+              <ModalImage src={`${driveUrl}${data.masterplanImage}`} alt='map' id='masterPlan' />
+              <div data-toggle="modal" data-target={`#masterPlan`}>
                 <img src={`${driveUrl}${data.masterplanImage}`} style={{height: 'auto', width: '100%'}} alt='map'/>
               </div>
             </div>
