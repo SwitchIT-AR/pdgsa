@@ -36,7 +36,7 @@ transition: .3s;
 
 .imgGroup {
   display: flex;
-  height: 600px;
+  /* height: 600px; */
 }
 
 .imgContainer {
@@ -49,6 +49,10 @@ transition: .3s;
 }
 
 @media (max-width: 768px) {
+
+  .sectionContainer {
+    margin-bottom: 50px;
+  }
   .sectionTitle span {
     font-size: 17px;
   }

@@ -6,7 +6,7 @@ import ModalImage from '../modalImage/ModalImage.tsx';
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='Modelo de Casa' className='pt-10 pb-50'>
+    <section id='Modelo de Casa' className={`${style.sectionContainer} pt-10 pb-50`}>
         <div className='row justify-content-center'>
           <div style={{ padding: '0 5rem' }}>
             <div
