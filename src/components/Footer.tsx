@@ -41,8 +41,8 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                             </div>
                         </div>
                         <div className="col-xl-5 col-lg-5 col-sm-6">
-                            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                                <a style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '10px', marginBottom: '30px' }} target="_blank" rel="noopener" href="https://www.google.com/maps/place/Jardines+del+Frances/@8.606561,-82.426911,12z/data=!4m6!3m5!1s0x8fa5919ff3e3698f:0xa64f1082b2edc033!8m2!3d8.6065606!4d-82.426911!16s%2Fg%2F11v9hky864?hl=es-419&entry=ttu" >
+                            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'start' }}>
+                                <a style={{ textDecoration: 'none', display: 'flex', alignItems: 'baseline', justifyContent: 'start', gap: '10px', marginBottom: '30px' }} target="_blank" rel="noopener" href="https://www.google.com/maps/place/Jardines+del+Frances/@8.606561,-82.426911,12z/data=!4m6!3m5!1s0x8fa5919ff3e3698f:0xa64f1082b2edc033!8m2!3d8.6065606!4d-82.426911!16s%2Fg%2F11v9hky864?hl=es-419&entry=ttu" >
                                         <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '25px' }} icon={"fa-solid fa-location-dot" as IconProp} />
                                         <p style={{ margin: 0, padding: 0, fontSize: '20px', fontWeight: '400', letterSpacing: '1px', color: 'white' }}>Ven a conocernos!</p>
                                 </a>
