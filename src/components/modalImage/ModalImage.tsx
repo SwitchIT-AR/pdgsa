@@ -12,7 +12,7 @@ const ModalImage = ({ src, alt, id }: {src: string, alt: string, id: string}) =>
         <img className="d-block w-100" src={src} alt={alt} />
       </div>
       <div className="modal-footer">
-        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
