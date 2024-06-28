@@ -34,7 +34,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 <div className={classes.footerUlContainer}>
                                     <ul style={{ margin: '0', padding: '0'}}>
                                         {footerItems.map((item, index) => (
-                                            <li style={{ marginBottom: '12px' }} key={index}><a style={{ color: 'white', textDecoration: 'none' }} href={footerLinks[index].trim()}>{item.trim()}</a></li>
+                                            <li style={{ marginBottom: '12px' }} key={index}><a style={{ textDecoration: 'none' }} href={footerLinks[index].trim()}>{item.trim()}</a></li>
                                         ))}
                                     </ul>
                                 </div>
@@ -53,7 +53,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                     loading="lazy"
                                     title="Google Maps"
                                 ></iframe>
-                                <a style={{ textAlign: 'center', textDecoration: 'none', color: 'white' }} target="_blank" rel="noopener" href={`${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
+                                <a style={{ textDecoration: 'none', color: 'white', fontSize: '12px' }} target="_blank" rel="noopener" href={`${data.contactTerms}`}>Términos de las Políticas de Privacidad y Proteccíon de Datos Personales</a>
                             </div>
                         </div>
                     </div>

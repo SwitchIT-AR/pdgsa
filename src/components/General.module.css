@@ -137,6 +137,15 @@ section:hover .sectionTitle span::before{width: 100px;}
     padding-left: 50px;
 }
 
+.footerWeb .footerUlContainer ul li a {
+    color: white;
+}
+
+.footerWeb .footerUlContainer ul li:hover a{
+color: var(--main-color);
+font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .centerDivContent {
         display: flex;
