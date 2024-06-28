@@ -9,9 +9,8 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section id='Brochure' className={`${classes.brochureSection} pt-50 pb-50`}>
       <div className='container'>
+      <div className='row justify-content-center'>
         <div className={classes.contentContainer}>
-          <div className=''>
-            <div className={`${classes.dataContainer} about-content pl-lg-50`}>
               <div className={`${classes.centerTitle}`}>
                 <h2>{data.brochureTitle}</h2>
               </div>
@@ -33,9 +32,8 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                 Descargar
               </a>
               </div>
-            </div>
-
           </div>
+
           <div className='col-lg-5'>
             <div className={classes.imgContainer}>
               <a href="#" data-toggle="modal" data-target="#brochureModal">
@@ -48,7 +46,7 @@ const BrochureSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
             </div>
           </div>
         </div>
-      </div>
+        </div>
     </section>
   );
 };
