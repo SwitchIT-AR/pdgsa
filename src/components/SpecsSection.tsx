@@ -14,7 +14,7 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
           <img style={{ width: '100%', height: 'auto' }} src={`${props.driveUrl}${props.icon}`} alt="" />
         </div>
         <div className=''>
-          <p style={{ fontSize: '16px', margin: '0', color: 'black' }}>{props.title}</p>
+          <p style={{ fontSize: '16px', margin: '0', color: 'black', lineHeight: '1' }}>{props.title}</p>
         </div>
       </div>
     </div>
@@ -30,14 +30,14 @@ const SpecsSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
     <section id='Caracteristicas' className='services-area'>
       <div className='container'>
         <div className='row justify-content-center'>
-          <div className='col-xl-8 col-lg-10'>
             <div
               className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80  fadeInDown animated`}
             >
-              <span style={{ color: `var(--main-color)` }}>
+              <span>
                 {data.specsTitle}
               </span>
             </div>
+          <div className='col-xl-8 col-lg-10'>
             <div className='row'>
               {
                 formatedList.map((data, index) => (
