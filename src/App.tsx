@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './components/header/Header.tsx';
 import About from './components/about/About.tsx';
 import Counter from './components/Counter';
-import BrandSection from './components/BrandSection';
+import BrandSection from './components/brandSection/BrandSection.tsx';
 import Neighborhoods from './components/Neighborhoods';
 import Footer from './components/Footer';
 import Slider from './components/slider/Slider.tsx';
