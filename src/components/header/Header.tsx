@@ -26,6 +26,13 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
         }
     }
 
+    const handleClickLink = () => {
+        setOpenNav(false);
+        if (navRef.current) {
+            navRef.current.className = `${classes.nav} ${classes.close}`;
+        }
+    };
+
   // Validate arrays length
     const areArraysValid = itemsArray.length === linksArray.length;
 
@@ -119,9 +126,6 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 <a href="#"><img src={`${driveUrl}${data.logo}`} alt="logo"/></a>
                             </div>
                         <div className="">
-                            <div className={classes.responsivBtn}>
-                                <FontAwesomeIcon onClick={handleOpenNav} className={classes.bars} icon={"fa-solid fa-bars" as IconProp} />
-                            </div>
                             <div className={`${classes.textLinks} text-center`}>
                                 <nav ref={navRef} className={`${classes.nav}`} id="">
                                     <ul>
@@ -143,6 +147,36 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                     </div>
                 </div>
             </div>
+
+            <div className={classes.responsiveNav}>
+            <div className="" style={{backgroundColor: data.headerBackground}}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px' }} className="pt-4 pb-4">
+                            <div className={classes.logo}>
+                                <a href="#"><img src={`${driveUrl}${data.logo}`} alt="logo"/></a>
+                            </div>
+            <div className={classes.responsivBtn}>
+                <FontAwesomeIcon onClick={handleOpenNav} className={classes.bars} icon={"fa-solid fa-bars" as IconProp} />
+            </div>
+            <div className={`${classes.textLinks} text-center`}>
+                <nav ref={navRef} className={`${classes.nav}`} id="">
+                    <ul>
+                        {areArraysValid ? (
+                            itemsArray.map((item, index) => (
+                                <li key={index} onClick={handleClickLink}>
+                                    <a style={{textDecoration:"none"}} href={linksArray[index]}>{item}</a>
+                                </li>
+                            ))
+                        ) : (
+                            <li>
+                                <a style={{textDecoration:"none"}} href="#">Invalid Menu Data</a>
+                            </li>
+                        )}
+                    </ul>
+                </nav>
+            </div>
+            </div>
+            </div>
+        </div>
     </header>
   );
 };

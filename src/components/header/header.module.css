@@ -81,13 +81,29 @@
   font-weight: 800;
 }
 
-.headerContainer {
-  position: relative;
+.responsiveNav {
+  display: none;
 }
 
 @media (max-width: 1200px) {
   .secondHeader {
     display: none;
+  }
+
+  .logo a img {
+    width: 80%;
+  }
+
+  .headerContainer {
+    display: none;
+  }
+
+  .responsiveNav {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    /* padding: 10px 0; */
   }
 
   .responsivBtn {
@@ -101,17 +117,19 @@
   .nav ul {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    justify-content: flex-start;
+    position: fixed;
     z-index: 999;
-    background-color: red;
+    background-color: white;
     width: 100%;
     top: -100vh;
     left: 0;
     height: 100vh;
+    padding-top: 30px;
   }
 
   .open ul {
-    top: 10vh;
+    top: 9vh;
   }
 }
 
