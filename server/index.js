@@ -28,7 +28,7 @@ const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
 const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 
 app.post('/submit', async (req, res) => {
-    const { name, mail, body } = req.body;
+    const { name, mail, body, phone } = req.body;
     const timestamp = new Date().toLocaleString();
     const project = req.headers.referer || 'unknown';
     try {
@@ -39,7 +39,7 @@ app.post('/submit', async (req, res) => {
             valueInputOption: 'RAW',
             insertDataOption: 'INSERT_ROWS',
             resource: {
-                values: [[name, mail, body, timestamp, project]],
+                values: [[name, mail,phone, body, timestamp, project]],
             },
             auth: client,
         };
