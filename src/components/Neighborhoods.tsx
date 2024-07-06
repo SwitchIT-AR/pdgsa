@@ -53,7 +53,6 @@ const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
         <section id='Amenidades' className={`${style.servicesTwo} services-two`}>
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <div className='col-xl-8 col-lg-10'>
                         <div
                         className={`${style.sectionTitle} text-center pl-40 pr-40 mb-80 fadeInDown animated`}
                         data-animation='fadeInDown animated'
@@ -61,7 +60,6 @@ const Neighborhoods: React.FC<NeighborhoodsProps> = ({ data }) => {
                         >
                             <span style={{color: `var(--main-color)`}}>{data.amenitiesTitle}</span>
                         </div>
-                    </div>
                 </div>
                 <div className='row'>
                 {formated.map((neighborhood, index) => (
