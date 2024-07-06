@@ -27,7 +27,7 @@ right: 0;
 bottom: 0;
 height: 4px;
 width: 60px;
-background: #EF7F24;
+background: var(--main-color);
 margin: auto;
 transition: .3s;
 }

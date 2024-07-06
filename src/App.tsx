@@ -32,8 +32,9 @@ const App: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
-    const updatePrimaryColor = (newColor: string) => {
-        document.documentElement.style.setProperty('--main-color', newColor);
+    const updatePrimaryColor = (mainColor: string, mainShadow: string) => {
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        document.documentElement.style.setProperty('--main-shadow', mainShadow);
     };
 
     const fetchDataAsync = async () => {
@@ -42,7 +43,7 @@ const App: React.FC = () => {
             const result = await fetchData();
             if (result && typeof result === 'object') {
                 setData(result);
-                updatePrimaryColor(result.mainColor);
+                updatePrimaryColor(result.mainColor, result.mainShadow);
             } else {
                 console.error('Unexpected data format:', result);
             }
