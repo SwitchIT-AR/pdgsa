@@ -33,6 +33,8 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
         }
     };
 
+    console.log(`${driveUrl}${data.logo}`);
+
   // Validate arrays length
     const areArraysValid = itemsArray.length === linksArray.length;
 
