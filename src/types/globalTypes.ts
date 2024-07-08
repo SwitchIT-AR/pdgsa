@@ -89,9 +89,15 @@ export interface Data {
     navbarLinks: string;
     apartments: string;
     modelHomeTitle: string;
-    modelHomeSubtitle: string;
-    modelHomeImage1: string;
-    modelHomeImage2: string;
+    modelHome1Subtitle: string;
+    modelHome1Image1: string;
+    modelHome1Image2: string;
+    modelHome2Subtitle: string;
+    modelHome2Image1: string;
+    modelHome2Image2: string;
+    modelHome3Subtitle: string;
+    modelHome3Image1: string;
+    modelHome3Image2: string;
     modelHomeImage3: string;
     whatsappLogo: string;
     brochureTitle: string;
