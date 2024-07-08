@@ -40,6 +40,9 @@ const Counter: React.FC<CommonProps> = ({ data }) => {
                         </div>
                     ))}
                 </div>
+                <div style={{ textAlign: 'center'}}>
+                    <p style={{ fontSize: '12px', margin: '0' }}><span style={{color: 'red'}}>*</span>Datos referencia del Modelo {data.modelHome2Subtitle}</p>
+                </div>
             </div>
         </div>
     );
