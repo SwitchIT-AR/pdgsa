@@ -12,10 +12,16 @@ margin-bottom: 20px;
 }
 
 .sectionTitle h2 {
-font-size: 55px;
-padding-bottom: 30px;
+font-size: 25px;
+border: 0.1px solid transparent;
+padding: 5px 30px;
+border-radius: 20px;
+font-family: var(--bs-body-font-family);
+/* padding-bottom: 30px; */
 margin-bottom: 0px;
 position: relative;
+text-transform: uppercase;
+font-weight: 400;
 }
 
 .homeModelSubitle {
@@ -23,8 +29,9 @@ position: relative;
 }
 
 .active {
-  text-decoration: underline;
-  color: var(--main-color);
+  /* text-decoration: underline; */
+  color: white;
+  background-color: var(--main-color);
 }
 
 /* .sectionTitle span::before {

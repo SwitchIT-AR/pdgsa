@@ -70,7 +70,7 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               {data.modelHomeTitle}
             </span>
             <div
-              style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}
+              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}
             >
               <h2
                 className={`${style.homeModelSubitle} ${
