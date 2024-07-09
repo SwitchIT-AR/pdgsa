@@ -33,68 +33,10 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
         }
     };
 
-    console.log(`${driveUrl}${data.logo}`);
-
   // Validate arrays length
     const areArraysValid = itemsArray.length === linksArray.length;
 
     return (
-        // <header>
-        // <div className={`${classes.secondHeader}`}>
-        //                 <div className="">
-        //                     <p style={{padding: '0', margin: '0' ,fontSize:'1.2rem', color:"black"}}>{data.headerWelcomeText}</p>
-        //                 </div>
-        //                 <div style={{fontSize:'0.8rem'}} className={classes.headerInfo}>
-        //                     <ul>
-        //                         <li>
-        //                             <a style={{ textDecoration: 'none', color: 'black' }} href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer">
-        //                                 <FontAwesomeIcon style={{ color: 'var(--main-color)', fontSize: '1.3rem' }} icon={`fa-brands fa-whatsapp` as IconProp} />
-        //                                 <span>{data.headerPhone}</span>
-        //                             </a>
-        //                         </li>
-        //                         <li>
-        //                             <a style={{ textDecoration: 'none', color: 'black' }} href={`mailto:${data.headerEmail}`} target="_blank" rel="noopener noreferrer">
-        //                                 <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-mail-bulk"></i>
-        //                                 <span>{data.headerEmail}</span>
-        //                             </a>
-        //                         </li>
-        //                         <li>
-        //                             <i style={{ color: 'var(--main-color)', fontSize: '1rem' }} className="fa fa-clock"></i>
-        //                             <span>{data.headerHours}</span>
-        //                         </li>
-        //                     </ul>
-        //                 </div>
-        // </div>
-        //     <div id="header-sticky" className={classes.navigationContainer} style={{backgroundColor: data.headerBackground }}>
-        //         <div className={classes.logo}>
-        //             <a href="#">
-        //                 <img src={`${driveUrl}${data.logo}`} alt="logo"/>
-        //             </a>
-        //         </div>
-        //         <div className={classes.responsivBtn}>
-        //         <FontAwesomeIcon icon={"fa-solid fa-plus" as IconProp} />
-        //         </div>
-        //         <nav id='' className={classes.headerInfo}>
-        //             <ul>
-        //                 {areArraysValid ? (
-        //                     itemsArray.map((item, index) => (
-        //                         <li key={index}>
-        //                             <a style={{ textDecoration: 'none', color: 'black' }} href={linksArray[index]}>
-        //                                 {item}
-        //                             </a>
-        //                         </li>
-        //                     ))
-        //                 ) : (
-        //                         <li>
-        //                             <a style={{ textDecoration: 'none', color: 'black' }} href='#'>
-        //                                 Invalid Menu Data
-        //                             </a>
-        //                         </li>
-        //                 )}
-        //             </ul>
-        //         </nav>
-        //     </div>
-        // </header>
     <header className="header-area">
         <div className={`${classes.secondHeader}`}>
                         <div className="">
@@ -180,7 +122,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
             </div>
         </div>
     </header>
-  );
+    );
 };
 
 export default Header;

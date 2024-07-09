@@ -56,48 +56,46 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
     <section
       id='Modelo de Casa'
-      className={`${style.sectionContainer} pt-10 pb-50`}
+      className={`${style.sectionContainer}`}
     >
-      <div className='row justify-content-center'>
-        <div style={{ padding: '0 5rem' }}>
-          <div
-            className={`${style.sectionTitle} text-center pl-40 pr-40=  fadeInDown animated`}
+      <div
+        className={`${style.sectionTitle} text-center pl-40 pr-40  fadeInDown animated`}
+      >
+        <span
+          className={style.homeModelTitle}
+          style={{ color: `var(--main-color)` }}
+        >
+          {data.modelHomeTitle}
+        </span>
+        <div className={style.buttonsContainer}>
+          <h2
+            className={`${style.homeModelSubitle} ${
+              activeModel === data.modelHome1Subtitle ? style.active : ''
+            }`}
+            onClick={() => setActiveModel(data.modelHome1Subtitle)}
           >
-            <span
-              className={style.homeModelTitle}
-              style={{ color: `var(--main-color)` }}
-            >
-              {data.modelHomeTitle}
-            </span>
-            <div
-              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px' }}
-            >
-              <h2
-                className={`${style.homeModelSubitle} ${
-                  activeModel === data.modelHome1Subtitle ? style.active : ''
-                }`}
-                onClick={() => setActiveModel(data.modelHome1Subtitle)}
-              >
-                {data.modelHome1Subtitle}
-              </h2>
-              <h2
-                className={`${style.homeModelSubitle} ${
-                  activeModel === data.modelHome2Subtitle ? style.active : ''
-                }`}
-                onClick={() => setActiveModel(data.modelHome2Subtitle)}
-              >
-                {data.modelHome2Subtitle}
-              </h2>
-              <h2
-                className={`${style.homeModelSubitle} ${
-                  activeModel === data.modelHome3Subtitle ? style.active : ''
-                }`}
-                onClick={() => setActiveModel(data.modelHome3Subtitle)}
-              >
-                {data.modelHome3Subtitle}
-              </h2>
-            </div>
-          </div>
+            {data.modelHome1Subtitle}
+          </h2>
+          <h2
+            className={`${style.homeModelSubitle} ${
+              activeModel === data.modelHome2Subtitle ? style.active : ''
+            }`}
+            onClick={() => setActiveModel(data.modelHome2Subtitle)}
+          >
+            {data.modelHome2Subtitle}
+          </h2>
+          <h2
+            className={`${style.homeModelSubitle} ${
+              activeModel === data.modelHome3Subtitle ? style.active : ''
+            }`}
+            onClick={() => setActiveModel(data.modelHome3Subtitle)}
+          >
+            {data.modelHome3Subtitle}
+          </h2>
+        </div>
+      </div>
+      {/* <div className='row justify-content-center'> */}
+        <div>
           {activeModel === data.modelHome1Subtitle ? (
             <HouseModelCard
               data1={data.modelHome1Image1}
@@ -118,7 +116,7 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
             />
           )}
         </div>
-      </div>
+      {/* </div> */}
     </section>
   );
 };

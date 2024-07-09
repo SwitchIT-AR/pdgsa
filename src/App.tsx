@@ -14,7 +14,7 @@ import MasterPlanSection from './components/MasterPlanSection';
 import SpecsSection from './components/SpecsSection';
 import Youtube from "./components/youtube/Youtube.tsx";
 import HouseModelSection from './components/houseModel/HouseModelSection.tsx';
-import InteriorSection from './components/InteriorSection';
+import InteriorSection from './components/interior/InteriorSection.tsx';
 import SocialMedia from './components/SocialMedia';
 import BrochureSection from './components/brochure/BrochureSection.tsx';
 import { Data } from './types/globalTypes';
