@@ -6,11 +6,11 @@ import ModalImage from '../modalImage/ModalImage.tsx';
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
   return (
-    <section id='Modelo de Casa' className={`${style.sectionContainer} pt-10 pb-50`}>
-        <div className='row justify-content-center'>
-          <div style={{ padding: '0 5rem' }}>
+    <section id='Modelo de Casa' className={`${style.sectionContainer}`}>
+        {/* <div className='row justify-content-center'>
+          <div style={{ padding: '0 5rem' }}> */}
             <div
-              className={`${style.sectionTitle} text-center pl-40 pr-40=  fadeInDown animated`}
+              className={`${style.sectionTitle} text-center pl-40 pr-40 fadeInDown animated`}
             >
               <span className={style.homeModelTitle} style={{ color: `var(--main-color)` }}>
                 {data.modelHomeTitle}
@@ -35,8 +35,8 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
                   />
               </div>
             </div>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
     </section>
   );
 };
