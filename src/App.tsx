@@ -34,7 +34,6 @@ const App: React.FC = () => {
 
     const updatePrimaryColor = (newColor: string) => {
         document.documentElement.style.setProperty('--main-color', newColor);
-        console.log()
     };
 
     const fetchDataAsync = async () => {
