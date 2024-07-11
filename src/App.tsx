@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Slider from './components/slider/Slider.tsx';
 import ContactForm from './components/contact/ContactForm.tsx';
 import { fetchData } from './api';
-import MapSection from './components/MapSection';
+// import MapSection from './components/MapSection';
 import MasterPlanSection from './components/MasterPlanSection';
 import SpecsSection from './components/SpecsSection';
 import Youtube from "./components/youtube/Youtube.tsx";
@@ -32,8 +32,9 @@ const App: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<Error | null>(null);
 
-    const updatePrimaryColor = (newColor: string) => {
-        document.documentElement.style.setProperty('--main-color', newColor);
+    const updatePrimaryColor = (mainColor: string, mainShadow: string) => {
+        document.documentElement.style.setProperty('--main-color', mainColor);
+        document.documentElement.style.setProperty('--main-shadow', mainShadow);
     };
 
     const fetchDataAsync = async () => {
@@ -42,7 +43,7 @@ const App: React.FC = () => {
             const result = await fetchData();
             if (result && typeof result === 'object') {
                 setData(result);
-                updatePrimaryColor(result.mainColor);
+                updatePrimaryColor(result.mainColor, result.mainShadow);
             } else {
                 console.error('Unexpected data format:', result);
             }
@@ -53,6 +54,7 @@ const App: React.FC = () => {
             setLoading(false);
         }
     };
+
 
     useEffect(() => {
         fetchDataAsync();
@@ -75,7 +77,7 @@ const App: React.FC = () => {
             <Slider data={data} driveUrl={driveUrl} />
             <Youtube data={data} driveUrl={driveUrl} />
             <About data={data} driveUrl={driveUrl} />
-            <MapSection data={data} driveUrl={driveUrl} />
+            {/* <MapSection data={data} driveUrl={driveUrl} /> */}
             <Neighborhoods data={data}  />
             <MasterPlanSection data={data} driveUrl={driveUrl} />
             <SpecsSection data={data} driveUrl={driveUrl} />
