@@ -51,7 +51,7 @@ const HouseModelCard = ({
 };
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
-  const [activeModel, setActiveModel] = useState('Carmiel');
+  const [activeModel, setActiveModel] = useState('Nazareth Plus');
 
   return (
     <section
