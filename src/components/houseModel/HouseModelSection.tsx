@@ -51,7 +51,7 @@ const HouseModelCard = ({
 };
 
 const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
-  const [activeModel, setActiveModel] = useState('Sol');
+  const [activeModel, setActiveModel] = useState('Carmiel');
 
   return (
     <section
@@ -84,14 +84,14 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
           >
             {data.modelHome2Subtitle}
           </h2>
-          <h2
+          {/* <h2
             className={`${style.homeModelSubitle} ${
               activeModel === data.modelHome3Subtitle ? style.active : ''
             }`}
             onClick={() => setActiveModel(data.modelHome3Subtitle)}
           >
             {data.modelHome3Subtitle}
-          </h2>
+          </h2> */}
         </div>
       </div>
       {/* <div className='row justify-content-center'> */}
@@ -108,13 +108,13 @@ const HouseModelSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
               data2={data.modelHome2Image2}
               driveUrl={driveUrl}
             />
-          ) : (
-            <HouseModelCard
-              data1={data.modelHome3Image1}
-              data2={data.modelHome3Image2}
-              driveUrl={driveUrl}
-            />
-          )}
+          // ) : (
+          //   <HouseModelCard
+          //     data1={data.modelHome3Image1}
+          //     data2={data.modelHome3Image2}
+          //     driveUrl={driveUrl}
+          //   />
+          ) : null}
         </div>
       {/* </div> */}
     </section>
