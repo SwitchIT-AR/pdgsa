@@ -93,9 +93,9 @@ transition: .3s;
     padding: 5px 15px;
   }
 
-  .sectionTitle h2:first-of-type  {
+  /* .sectionTitle h2:first-of-type  {
     font-size: 11px;
-  }
+  } */
 
   .imgGroup {
     flex-direction: column;
