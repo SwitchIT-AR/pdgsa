@@ -14,7 +14,7 @@ const SpecCard = (props: { index: number; title: string; icon: string, color: st
           <img style={{ width: '100%', height: 'auto' }} src={`${props.driveUrl}${props.icon}`} alt="" />
         </div>
         <div className=''>
-          <p style={{ fontSize: '16px', margin: '0', color: 'black', lineHeight: '1' }}>{props.title}</p>
+          <p style={{ fontSize: '14px', margin: '0', color: 'black', lineHeight: '1' }}>{props.title}</p>
         </div>
       </div>
     </div>

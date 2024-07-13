@@ -30,7 +30,7 @@ const NeighborCard = (props: NeigCardProps) => {
       >
         <div style={{height: '50px'}} className='second-services-content'>
           <h5 style={{fontSize: '17px'}}>{title}</h5>
-          <p style={{fontSize: '15px'}}>{description}</p>
+          <p style={{fontSize: '12px'}}>{description}</p>
         </div>
         <div>
           <FontAwesomeIcon
