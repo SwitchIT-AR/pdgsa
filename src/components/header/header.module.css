@@ -13,7 +13,7 @@
 }
 
 .logo {
-  width: 300px;
+  width: 110px;
   height: auto;
 }
 
@@ -163,7 +163,7 @@
   }
 
   .logo a img {
-    width: 80%;
+    width: 40%;
   }
 
   .headerContainer {
@@ -202,7 +202,7 @@
   }
 
   .open ul {
-    top: 9vh;
+    top: 10vh;
   }
 
   .close ul {

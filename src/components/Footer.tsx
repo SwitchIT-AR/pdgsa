@@ -18,7 +18,7 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         <div className="col-xl-4 col-lg-4 col-sm-12">
                             <div className="footer-widget">
                                 <div data-animation="fadeInDown animated" className="footer-text mb-20">
-                                    <div style={{ maxWidth: '350px', height: 'auto', marginBottom: '40px'}}>
+                                    <div style={{ maxWidth: '150px', height: 'auto', marginBottom: '40px'}}>
                                     <img style={{width: '100%', height: 'auto'}}
                                         src={`${driveUrl}${data.logoWhite}`} alt="logo"/>
                                     </div>

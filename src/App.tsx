@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 import Slider from './components/slider/Slider.tsx';
 import ContactForm from './components/contact/ContactForm.tsx';
 import { fetchData } from './api';
-import MapSection from './components/MapSection';
+// import MapSection from './components/MapSection';
 import MasterPlanSection from './components/MasterPlanSection';
 import SpecsSection from './components/SpecsSection';
 import Youtube from "./components/youtube/Youtube.tsx";
@@ -76,7 +76,7 @@ const App: React.FC = () => {
             <Slider data={data} driveUrl={driveUrl} />
             <Youtube data={data} driveUrl={driveUrl} />
             <About data={data} driveUrl={driveUrl} />
-            <MapSection data={data} driveUrl={driveUrl} />
+            {/* <MapSection data={data} driveUrl={driveUrl} /> */}
             <Neighborhoods data={data}  />
             <MasterPlanSection data={data} driveUrl={driveUrl} />
             <SpecsSection data={data} driveUrl={driveUrl} />
