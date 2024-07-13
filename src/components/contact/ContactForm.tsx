@@ -67,7 +67,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                             <div className="f-cta-icon">
                                 <i className="far fa-map"></i>
                             </div>
-                            <h5>Ubicacion</h5>
+                            <h5 style={{ color: 'white'}}>Ubicacion</h5>
                             <p>{data.contactAddress}</p>
                             </a>
                         </div>
@@ -75,15 +75,15 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
                             <div className="f-cta-icon">
                                 <i className="far fa-clock"></i>
                             </div>
-                            <h5>Horario de Atención</h5>
+                            <h5 style={{ color: 'white'}}>Horario de Atención</h5>
                             <p>{data.contactTime}</p>
                         </div>
                         <div className="single-cta pb-30 mb-30">
                             <div className="f-cta-icon">
                                 <i className="far fa-envelope-open"></i>
                             </div>
-                            <h5>Escríbenos</h5>
-                            <p>Siempre estamos disponibles para atender tu consulta: <a href={data.contactMail}>{data.contactMail}</a></p>
+                            <h5 style={{ color: 'white'}}>Escríbenos</h5>
+                            <p>Siempre estamos disponibles para atender tu consulta: <a style={{ color: 'white'}} href={data.contactMail}>{data.contactMail}</a></p>
                         </div>
                     </div>
                 </div>
