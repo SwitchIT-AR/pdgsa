@@ -10,8 +10,8 @@
 
 @media (max-width: 768px) {
   .autoHeight {
-    height: 40vh;
-    padding: 50px 10px;
+    height: 20vh;
+    padding: 100px 10px;
     /* background-color: black; */
   }
 }
