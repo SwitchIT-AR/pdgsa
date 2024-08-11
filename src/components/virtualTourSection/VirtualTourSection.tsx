@@ -68,9 +68,9 @@ const VirtualTourSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
         <div>
             <VirtualSectionImagesGroup
               recorridoCasa1Link={data.recorridoCasa1Link}
-              recorridoCasa2Link={data.recorridoCasa2Link}
+              // recorridoCasa2Link={data.recorridoCasa2Link}
               imageCasa1={data.recorridoCasa1Image}
-              imageCasa2={data.recorridoCasa2Image}
+              // imageCasa2={data.recorridoCasa2Image}
               driveUrl={driveUrl}
             />
         </div>
