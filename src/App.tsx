@@ -24,6 +24,7 @@ import 'animate.css';
 // import classes from './components/General.module.css';
 import './components/styles/globalVariables.css';
 import LoadingPage from './components/loading/LoadingPage.tsx';
+import VirtualTourSection from './components/virtualTourSection/VirtualTourSection.tsx';
 
 const driveUrl = "https://lh3.googleusercontent.com/d/";
 
@@ -75,6 +76,7 @@ const App: React.FC = () => {
             <Header data={data} driveUrl={driveUrl} />
             <Slider data={data} driveUrl={driveUrl} />
             <Youtube data={data} driveUrl={driveUrl} />
+            <VirtualTourSection data={data} driveUrl={driveUrl} />
             <About data={data} driveUrl={driveUrl} />
             <MapSection data={data} driveUrl={driveUrl} />
             <Neighborhoods data={data}  />
