@@ -63,6 +63,7 @@ transition: .3s;
 
 .imgGroup {
   display: flex;
+  justify-content: center;
   /* height: 600px; */
 }
 
