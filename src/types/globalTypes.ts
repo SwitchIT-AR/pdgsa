@@ -104,6 +104,9 @@ export interface Data {
     interiorCardId2: string;
     interiorCardId3: string;
     interiorCardId4: string;
+    recorridoTitleSection: string;
+    recorridoCasa1Link: string;
+    recorridoCasa1Image: string;
 }
 
 export interface CommonProps {
