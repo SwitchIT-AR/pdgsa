@@ -5,15 +5,11 @@ import { CommonProps } from '../../types/globalTypes.ts';
 
 const VirtualSectionImagesGroup = ({
   recorridoCasa1Link,
-  // recorridoCasa2Link,
   imageCasa1,
-  // imageCasa2,
   driveUrl,
 }: {
   recorridoCasa1Link: string,
-  // recorridoCasa2Link: string,
   imageCasa1: string,
-  // imageCasa2: string,
   driveUrl: string;
 }) => {
   return (
@@ -46,9 +42,7 @@ const VirtualTourSection: React.FC<CommonProps> = ({ data, driveUrl }) => {
         <div className=''>
             <VirtualSectionImagesGroup
               recorridoCasa1Link={data.recorridoCasa1Link}
-              // recorridoCasa2Link={data.recorridoCasa2Link}
               imageCasa1={data.recorridoCasa1Image}
-              // imageCasa2={data.recorridoCasa2Image}
               driveUrl={driveUrl}
             />
         </div>
