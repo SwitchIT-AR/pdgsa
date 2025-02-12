@@ -1,5 +1,3 @@
-// types/globalTypes.ts
-
 export interface Data {
     Key: string;
     logo: string;
@@ -110,9 +108,20 @@ export interface Data {
     interiorCardId2: string;
     interiorCardId3: string;
     interiorCardId4: string;
+    // recorridoTitleSection: string;
+    // recorridoCasa1Link: string;
+    // recorridoCasa1Image: string;
+    // recorridoCasa2Link: string;
+    // recorridoCasa2Image: string;
+    casaVirtualTitleSection: string;
+    casa3D1Link: string;
+    casa3D1Imagen: string;
+    // casa3D2Link: string;
+    // casa3D2Imagen: string;
 }
 
 export interface CommonProps {
     data: Data;
     driveUrl: string;
 }
+
