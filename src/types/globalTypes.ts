@@ -109,6 +109,11 @@ export interface Data {
     recorridoCasa2Link: string;
     recorridoCasa1Image: string;
     recorridoCasa2Image: string;
+    casaVirtualTitleSection: string;
+    casa3D1Link: string;
+    casa3D1Imagen: string;
+    casa3D2Link: string;
+    casa3D2Imagen: string;
 }
 
 export interface CommonProps {
