@@ -118,6 +118,7 @@ export interface Data {
     casa3D1Imagen: string;
     // casa3D2Link: string;
     // casa3D2Imagen: string;
+    googleMapsRedirect: string;
 }
 
 export interface CommonProps {
