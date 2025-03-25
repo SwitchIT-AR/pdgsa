@@ -110,6 +110,7 @@ export interface Data {
     interiorCardId2: string;
     interiorCardId3: string;
     interiorCardId4: string;
+    googleMapsRedirect: string;
 }
 
 export interface CommonProps {
