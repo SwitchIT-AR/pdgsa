@@ -107,6 +107,7 @@ export interface Data {
     recorridoTitleSection: string;
     recorridoCasa1Link: string;
     recorridoCasa1Image: string;
+    googleMapsRedirect: string;
 }
 
 export interface CommonProps {
