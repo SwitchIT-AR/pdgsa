@@ -59,7 +59,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 {areArraysValid ? (
                                     itemsArray.map((item, index) => (
                                         <li key={index}>
-                                            <a style={{ textDecoration: "none" }} href={linksArray[index]}>{item}</a>
+                                            {item === 'Posventa' ? <a style={{ textDecoration: "none" }} href={data.LinkPosventa} target='_blank'>{item}</a> : <a style={{ textDecoration: "none" }} href={linksArray[index]}>{item}</a>}
                                         </li>
                                     ))
                                 ) : (
