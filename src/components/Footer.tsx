@@ -34,7 +34,9 @@ const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
                                 <div className={classes.footerUlContainer}>
                                     <ul style={{ margin: '0', padding: '0'}}>
                                         {footerItems.map((item, index) => (
-                                            <li style={{ marginBottom: '12px' }} key={index}><a style={{ textDecoration: 'none' }} href={footerLinks[index].trim()}>{item.trim()}</a></li>
+                                            <li style={{ marginBottom: '12px' }} key={index}>
+                                                {item === 'Posventa' ? <a style={{ textDecoration: "none" }} href={data.LinkPosventa} target='_blank'>{item}</a> : <a style={{ textDecoration: "none" }} href={footerLinks[index]}>{item}</a>}
+                                                </li>
                                         ))}
                                     </ul>
                                 </div>
