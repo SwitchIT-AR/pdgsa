@@ -110,6 +110,7 @@ export interface Data {
     recorridoCasa1Image: string;
     recorridoCasa2Image: string;
     googleMapsRedirect: string;
+    LinkPosventa: string;
 }
 
 export interface CommonProps {
