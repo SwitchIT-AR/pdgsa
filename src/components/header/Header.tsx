@@ -21,6 +21,9 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
 
     const areArraysValid = itemsArray.length === linksArray.length;
 
+    console.log('Item: ', itemsArray);
+    console.log(linksArray);
+
     return (
         <header className="header-area">
             <div className={`${classes.secondHeader}`}>
@@ -86,7 +89,7 @@ const Header: React.FC<CommonProps> = ({ data, driveUrl }) => {
                         {areArraysValid ? (
                             itemsArray.map((item, index) => (
                                 <li key={index} onClick={handleClickLink}>
-                                    <a style={{ textDecoration: "none" }} href={linksArray[index]}>{item}</a>
+                                    {item === 'Posventa' ? <a style={{ textDecoration: "none" }} href={data.LinkPosventa} target='_blank'>{item}</a> : <a style={{ textDecoration: "none" }} href={linksArray[index]}>{item}</a>}
                                 </li>
                             ))
                         ) : (

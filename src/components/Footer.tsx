@@ -7,8 +7,8 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 
 const Footer: React.FC<CommonProps> = ({ data, driveUrl }) => {
-    const footerLinks = data.footerLinks.split(',');
-    const footerItems = data.footerItems.split(',');
+    const footerLinks = data.footerLinks.split(', ');
+    const footerItems = data.footerItems.split(', ');
 
     return (
         <footer className="footer-bg footer-p pt-40 pb-80">
