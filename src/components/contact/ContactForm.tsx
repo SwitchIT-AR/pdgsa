@@ -45,6 +45,7 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
           mail,
           phone,
           body,
+          codename: 'LSF'
         }),
       });
 

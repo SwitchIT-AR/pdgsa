@@ -29,7 +29,7 @@ const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 const vrifyToken = 'a11b75c8d7645008b3e5cc91428a6fbe';
 
 app.post('/submit', async (req, res) => {
-    const { name, mail, body, phone } = req.body;
+    const { name, mail, body, phone, codename } = req.body;
     const timestamp = new Date().toLocaleString();
     const project = req.headers.referer || 'unknown';
     
@@ -67,7 +67,7 @@ app.post('/submit', async (req, res) => {
                     lastName: name,
                     phoneNumber: phone,
                     emailAddress: mail,
-                    projectCodename: 'LSF',
+                    projectCodename: codename,
                     origin: 'Web',
                 }),
             }
