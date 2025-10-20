@@ -73,7 +73,6 @@ const ContactForm: React.FC<CommonProps> = ({ data }) => {
       setIsLoading(false);
     }
   };
-
   return (
     <div className='container mb-50'>
       <div className='row justify-content-center'>
