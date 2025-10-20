@@ -48,10 +48,10 @@ app.post('/submit', async (req, res) => {
             auth: client,
         };
         
-        const response = await sheets.spreadsheets.values.append(request);
+        const response = sheets.spreadsheets.values.append(request);
 
         if (!response.ok) {
-            console.error('Error en webhook de managio:', await webhookResponse.text());
+            console.error('Error en webhook de managio:', await response.text());
         }
         
         // 2. Enviar al webhook de managio (desde el backend)
