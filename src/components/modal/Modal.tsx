@@ -33,6 +33,7 @@ const Modal: React.FC<CommonProps> = ({ data }) => {
           mail,
           phone,
           body: 'Enviado desde Brochure',
+          codename: 'AB',
         }
       );
 
