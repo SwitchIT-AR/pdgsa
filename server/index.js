@@ -27,11 +27,15 @@ const spreadsheetId = '1zwp3pbb9sNnF6trygRXUsMLm-GROSpx4lU2gD9NmmvY';
 
 const folderId = '1-Wy5YMot0lqLLVA4hwpmGHTkw7glXeVp'; // Your Drive folder ID
 
+const vrifyToken = 'a11b75c8d7645008b3e5cc91428a6fbe';
+
 app.post('/submit', async (req, res) => {
-    const { name, mail, body, phone } = req.body;
+    const { name, mail, body, phone, codename } = req.body;
     const timestamp = new Date().toLocaleString();
     const project = req.headers.referer || 'unknown';
+    
     try {
+        // 1. Guardar en Google Sheets
         const client = await auth.getClient();
         const request = {
             spreadsheetId,
@@ -39,17 +43,58 @@ app.post('/submit', async (req, res) => {
             valueInputOption: 'RAW',
             insertDataOption: 'INSERT_ROWS',
             resource: {
-                values: [[name, mail,phone, body, timestamp, project]],
+                values: [[name, mail, phone, body, timestamp, project]],
             },
             auth: client,
         };
+        
         const response = await sheets.spreadsheets.values.append(request);
-        res.status(200).send(response.data);
+
+        if (!response.ok) {
+            console.error('Error en webhook de managio:', await webhookResponse.text());
+        }
+        
+        // 2. Enviar al webhook de managio (desde el backend)
+        const webhookResponse = await fetch(
+            'https://vtc-api.managio.com.ar/api/webhook/google-forms',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    verifyToken: vrifyToken,
+                    firstName: name,
+                    lastName: name,
+                    phoneNumber: phone,
+                    emailAddress: mail,
+                    projectCodename: codename,
+                    origin: 'Web',
+                }),
+            }
+        );
+
+        if (!webhookResponse.ok) {
+            console.error('Error en webhook de managio:', await webhookResponse.text());
+            // Decidí si querés que falle o no si managio falla
+            // throw new Error('Error al enviar a managio');
+        }
+
+        // 3. Responder al frontend
+        res.status(200).json({
+            success: true,
+            message: 'Formulario enviado correctamente'
+        });
+        
     } catch (error) {
-        console.error('Error writing to Google Sheets:', error);
-        res.status(500).send('Error writing to Google Sheets.');
+        console.error('Error en el proceso:', error);
+        res.status(500).json({ 
+            success: false, 
+            error: 'Error al procesar el formulario' 
+        });
     }
 });
+
 
 app.get('/data', async (req, res) => {
     try {
